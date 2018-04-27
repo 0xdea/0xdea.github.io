@@ -1,0 +1,409 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+
+<title>0xdeadbeef dot info | raptor's labs</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=QEM9w8Kqgq">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=QEM9w8Kqgq">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=QEM9w8Kqgq">
+<link rel="manifest" href="/manifest.json?v=QEM9w8Kqgq">
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=QEM9w8Kqgq" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico?v=QEM9w8Kqgq">
+<meta name="apple-mobile-web-app-title" content="0xdeadbeef.info">
+<meta name="application-name" content="0xdeadbeef.info">
+<meta name="theme-color" content="#ffffff">
+
+<meta name="author" content="Marco Ivaldi">
+<meta name="keywords" content="Marco Ivaldi, Raptor, 0xdeadbeef, 0dd, exploits, hacking, OSSTMM, OPSEC, voodoo, shaolin, fnord, eris">
+<meta name="description" content="Computer security researcher and ethical hacker Marco Ivaldi introduces his exploits, tools, articles, and configuration templates.">
+
+</head>
+
+<body bgcolor="#e0e0e0" text="#000000" link="blue" vlink="navy" alink="#ff8080">
+
+<table width="100%">
+<tr><td>
+<center><img src="raptor.png" alt="Raptor" height="100" width="500"></center>
+</td></tr>
+<tr bgcolor="navy"><td>
+<center><font color="#e0e0e0">0xdeadbeef dot info.</font></center>
+</td></tr>
+</table>
+
+<center><i><br>
+"A chain is only as strong as its weakest link." -- Charles A. Lindbergh<br>
+"I have seen the fnords." -- Historical graffiti on Anarchy Bridge, UK<br>
+"Testing can prove the presence of bugs, but not their absence." -- Edsger W. Dijkstra<br>
+"The enemy knows the system." -- Claude E. Shannon<br>
+"Perfection is achieved when there is nothing left to remove." -- Antoine de Saint-Exupery<br>
+"The GNU people aren't evil." -- /usr/src/linux/Documentation/CodingStyle<br>
+"You can't argue with a root shell." -- Felix "FX" Lindner<br>
+"Well, until that perfect world you need red team analysis" -- @thegrugq_ebooks<br>
+"Never whistle while you're pissing." -- Hagbard Celine<br>
+"When cryptography is outlawed, bayl bhgynjf jvyy unir cevinpl." -- Anonymous<br>
+<br></i></center>
+
+<!-(2002)
+                   Choose Windows. Choose the eXPerience.
+                 Choose flashy menus on your fucking server.
+                         Choose Exchange. Choose IIS.
+          Choose Code Red, Nimda, the Lovebug, and a sexy Melissa...
+       Choose Outlook and end up wondering where your stupid .docs are.
+             Choose not to choose. Let Micro$oft do it for you.
+
+                     But why would I want to do a thing like that?
+
+                  I choose not to be chosen: I choose something else.
+                  The reasons? There are too many reasons.
+                And who needs reasons when you've got Linux?
+->
+
+<!-(2000)
+		   Choose Windows. Choose the Millennium.
+                  Choose engineering with a fucking mouse.
+                       Choose IIS. Choose SQL Server.
+                 Choose VB, IE, ASP, and a fucking big NT...
+ Choose SMB and end up wondering why your passwords are on that shitty site.
+             Choose not to choose. Let Micro$oft do it for you.
+
+                But why would I want to do a thing like that?
+
+             I choose not to be chosen: I choose something else.
+                  The reasons? There are too many reasons.
+                And who needs reasons when you've got Linux?
+->
+
+<!-(1998)
+                           Choose Windows. Choose 95.
+                       Choose a fucking debugging career.
+                    Choose IIS. Choose a big NT workstation.
+          Choose VB, IE, ActiveX players and electrical tin openers...
+   Choose VISA and end up wondering who the fuck you are on a Sunday morning.
+                      Choose a future. Choose Micro$oft!
+
+                 But why would I want to do a thing like that?
+
+                I choose not to choose: I choose something else.
+                  And the reasons? There are too many reasons. 
+                     Who needs reasons when you've got Linux?
+->
+
+<table width="100%">
+<tr bgcolor="navy"><td>
+<center><font color="navy">Fnord!</font></center>
+</td></tr>
+</table>
+
+<h2><a name="raptor"><font color="navy">[0x01] Who's Raptor?</font></a></h2>
+I'm a seasoned information security
+<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">researcher</a>
+and consultant, specializing in networking (from
+<a href="http://www.textfiles.com/">old school</a> X.25 to modern Wi-Fi),
+telephony (POTS, mobile, VoIP), and cyber-physical systems (SCADA and
+process control technologies in general). I'm employed as Principal Security
+Advisor at
+<a href="http://www.mediaservice.net/">@Mediaservice.net</a>, a leading 
+information security consulting firm based in Italy, where I'm in charge of
+project and team management, penetration testing, compliance audits,
+vulnerability research, and
+<a href="https://www.exploit-db.com/author/?a=315">exploit development</a>.
+Basically, I'm a professional
+<a href="http://www.catb.org/jargon/html/H/hacker.html">hacker</a>
+and project manager. I hold the following certifications:
+
+<ul>
+<li>(ISC)2 Certified Information Systems Security Professional (<a href="https://www.isc2.org/cissp/">CISSP</a>)
+<li>PCI Qualified Security Assessor (<a href="https://www.pcisecuritystandards.org/approved_companies_providers/qsa_companies.php">QSA</a>)
+<li>PCI Approved Scanning Vendor (<a href="https://www.pcisecuritystandards.org/approved_companies_providers/approved_scanning_vendors.php">ASV</a>)
+<li>OSSTMM Professional Security Analyst (<a href="http://www.opsa.org/">OPSA</a>)
+<li>OSSTMM Professional Security Tester (<a href="http://www.opst.org/">OPST</a>)
+<li>OSSTMM Wireless Security Expert (<a href="http://www.owse.org/">OWSE</a>)
+<li><a href="http://www.iso.org/iso/iso27001">ISO/IEC 27001</a> Lead Auditor
+<li><a href="http://www.prince-officialsite.com/">PRINCE2</a> Foundation
+</ul>
+
+As member of the 
+<a href="http://www.isecom.org/about-us.html">ISECOM Core Team</a>,
+I'm actively involved in the development of the Open Source Security Testing 
+Methodology Manual (<a href="http://www.osstmm.org/">OSSTMM</a>), the 
+international standard for performing security testing and metrics. I'm also
+contributing to the Hacker Highscool 
+(<a href="http://www.hackerhighschool.org/">HHS</a>), another ISECOM project
+promoting security awareness for teens. As a technical writer, I've co-authored
+some popular books and I've published many articles about hacking, security, 
+and privacy. I co-founded 
+<a href="stuff/lc0.jpg">Linux&amp;C</a> (the first Italian 
+magazine about Linux and open source), Linux Pratico, and H&amp;C.<p>
+
+This is my personal homepage and playground. Despite being a busy guy, I try 
+to keep it up to date. Take a look below for 
+<font color="red">(new)</font> stuff. Please send your feedback to: Marco 
+Ivaldi 
+&lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info</a>&gt;
+(<a href="raptor.asc">PGP key</a> updated on 2014-07-01).<p>
+
+<h2><a name="projects"><font color="navy">[0x02] Projects</font></a></h2>
+Here's the list of my current research projects related to ethical hacking and 
+information security.<p>
+
+<ul>
+<li><a href="http://www.osstmm.org/">OSSTMM</a>. I'm a primary contributor of ISECOM's Open Source Security Testing Methodology Manual.
+<li><a href="http://www.hackerhighschool.org/">HHS</a>. I'm contributing to the Hacker Highscool, another ISECOM project providing security awareness for teens.
+<li><a href="https://github.com/0xdea">Raptor's GitHub</a>. This is my GitHub page, where some of my more recent projects are hosted.
+<li><a href="http://techblog.mediaservice.net/">Tech Blog @ Media</a>. This is the on-line repository of research projects sponsored by my employer.
+<li><a href="http://www.antifork.org/">Antifork Research</a>. I'm one of the founders of the project (formerly known as <a href="http://web.archive.org/web/19990427024425/http://www.dislessici.org:80/">disLESSici team</a>).
+</ul>
+
+<h2><a name="papers"><font color="navy">[0x04] Publications</font></a></h2>
+This is a collection of books, articles, research papers, presentations, and 
+advisories I've written or contributed to. A list of relevant mailing lists is 
+also included. Links to more modern social media platforms are in the footer
+of this homepage.<p>
+
+<b>Articles and Books</b>
+<ul>
+<li><a href="papers/anonimato_su_internet.html">L'anonimato su Internet</a>. About <a href="http://www.freehaven.net/anonbib/">anonymity</a> and privacy on the Internet, appeared on <a href="http://www.apogeonline.com/">Apogeonline</a> on 19/01/2000.
+<li><a href="papers/echelon.html">Qualcuno ci ascolta</a>. About the ECHELON network (written in January 2000, not published elsewhere).
+<li><a href="papers/intrusioni-di-rete.ppt">Intrusioni di rete</a>. Slides compiled for an Information Security Master in Milan University (14/12/2001).
+<li><a href="papers/quantum.html">Introduzione al Quantum Computing</a>. Introduction to QC, also released as an <a href="http://www.apogeonline.com/libri/88-503-1062-5/scheda">Apogeonline ebook</a> in July 2002.
+<li><a href="papers/x25.pdf">Sicurezza su reti X.25</a>. White paper written for <a href="https://web.archive.org/web/20131001085035/http://www.blackhats.it/">ITBH</a> and released to the public in September 2002.
+<li><a href="http://www.apogeonline.com/libri/88-503-2280-1/scheda">L'arte dell'hacking</a>. I did the technical review of the translation of <a href="http://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441">Hacking: the art of exploitation</a>, by J. Erickson.
+<li><a href="https://www.amazon.it/Vulnerabilit%C3%A0-Linux-pratica-tecniche-exploiting/dp/888150099X/">Vulnerabilita' su Linux</a>. I wrote the foreword for this practical exploitation guide by Enrico Feresin.
+<li><a href="http://www.amazon.com/Hacking-Exposed-Linux/dp/0072262575">Hacking Exposed Linux</a>. I wrote the VoIP chapter for the third edition of the HEL book, released by <a href="http://www.isecom.org/">ISECOM</a>.
+<li><a href="http://www.mediaservice.net/news/496/La_Metrica_di_Sicurezza_di_OSSTMM">La metrica di sicurezza di OSSTMM</a>. About the attack surface security metrics defined by OSSTMM (rav).
+<li><a href="http://www.hoepli.it/libro/cyberworld/9788820356927.html">Cyberworld</a>. I co-authored this book sponsored by the Italian DoD's <a href="http://www.difesa.it/">National Security Observatory</a>.
+<li><a href="http://www.isticom.it/documenti/rivista/rivista2013/2013_05_43-50_certificazione_sicurezza_osstmm.pdf">La Comunicazione</a>. I wrote the article "ICT Security Certification with OSSTMM", published by <a href="http://www.isticom.it/">ISCOM</a>.
+<li><a href="http://www.mediaservice.net/news/504/I_cinque_miti_della_sicurezza_SCADA">I cinque miti della sicurezza SCADA</a>. Article discussing SCADA security myths and popular beliefs.
+<li><a href="http://www.mediaservice.net/news/518/protezione-degli-utenti-vip">Protezione degli utenti VIP</a>. Article about tailoring information security services for Top Managers.
+<li><a href="http://www.isaca.org/chapters5/Venice/Benefits/Documents/ISACA_VENICE_QUADERNI_01_PENTEST_%202014.pdf">Penetration Testing Guidelines</a>. I co-authored these security testing guidelines by <a href="https://www.isaca.org/">ISACA</a>'s Venice Chapter.
+<li><a href="https://clusit.it/wp-content/uploads/download/Rapporto_Clusit%202016.pdf">CLUSIT Report 2016</a>. I co-authored the e-commerce section of this year's annual <a href="https://clusit.it/">CLUSIT</a> ICT security report.
+<li><a href="https://techblog.mediaservice.net/2017/09/tracing-arbitrary-methods-and-function-calls-on-android-and-ios/">Tracing Android and iOS apps</a>. Blog post explaining how to use my raptor_frida_*_trace.js <a href="https://github.com/0xdea/frida-scripts/">scripts</a>.
+<li><a href="https://techblog.mediaservice.net/2017/10/in-praise-of-tactical-exploitation/">In praise of tactical exploitation</a> <font color="red">(new)</font>. Blog post introducing my new tactical exploitation <a href="https://github.com/0xdea/tactical-exploitation">toolkit</a>.
+<li><a href="https://techblog.mediaservice.net/2017/11/how-a-unix-hacker-discovered-the-windows-powershell/">How a UNIX hacker discovered PowerShell</a> <font color="red">(new)</font>. Blog post covering my unexpected PowerShell journey.
+</ul>
+
+<b>Interviews and Mentions</b>
+<ul>
+<li><a href="http://www.newsweek.com/stealing-minutes-95749">Stealing Minutes</a>. Newsweek International reporter Benjamin Sutherland interviewed me for this article on VoIP.
+<li><a href="https://web.archive.org/web/20160629085153/http://www.materatown.net/2012/04/materatown-vocat-magister-respondet/">Materatown</a>. I have been interviewed by the fine folks at Materatown.net on the topic of satire and anonymity.
+<li><a href="http://www.controlglobal.com/articles/2012/boyes-process-automation-systems-security/?show=all">How Secure is Secure Enough?</a>. Control's Editor-in-Chief Walt Boyes interviewed me for this <a href="http://www.controlglobal.com/assets/digital_edition/2012/CG1210-magazine.pdf">article</a> on SCADA.
+<li><a href="http://www.theregister.co.uk/2016/10/14/ibm_asked_security_researcher_to_pull_exploit_code/">IBM: Yes, it's true</a>. The Register published an article on IBM's attempt to censor exploit information.
+<li><a href="papers/beginners.re.pdf">Beginners.re</a>. I've been quoted on the cover of the Farsi translation of 
+<a href="https://beginners.re/">Beginners.re</a> by 
+<a href="https://ir.linkedin.com/in/jokar">Mohsen Mostafa Jokar</a>.
+</ul>
+
+<b>Advisories</b>
+<ul>
+<li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0190">CVE-2003-0190</a>. I discovered and published this OpenSSH/PAM Delay Information Disclosure Vulnerability.
+<li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1242">CVE-2006-1242</a>. I discovered and published this Linux Kernel IP ID Information Disclosure Weakness.
+<li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5229">CVE-2006-5229</a>. I discovered and published yet another OpenSSH information disclosure via timing leak.
+</ul>
+
+<b>Related Works</b>
+<ul>
+<li><a href="https://www.giac.org/paper/gcih/700/local-privilege-escalation-solaris-8-solaris-9-buffer-overflow-passwd1/105309">Buffer Overflow in passwd(1)</a>. This white paper has been written by Shaun McAdams for his GIAC GCIH practical.
+<li><a href="http://eks0.free.fr/whax-demos/?f=raptor_config.xml">Whoppix-raptor</a>. A flash demo showing raptor_chown.c in action done for whoppix.net by ports@portsonline.net.
+<li><a href="https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/ssh/ssh_enumusers.rb">SSH Enumusers</a>. A <a href="http://www.metasploit.com/">Metasploit</a> module that implements the time-based attack against SSH I discovered back in 2003.
+</ul>
+
+<b>Mailing Lists</b>
+<ul>
+<li><a href="http://www.securityfocus.com/archive/1">Bugtraq</a>. The first public mailing list dedicated to issues about computer security, and how to fix them.
+<li><a href="http://seclists.org/fulldisclosure/">Full-Disclosure</a>. An unmoderated high-traffic discussion list for disclosure of security information.
+<li><a href="http://www.securityfocus.com/archive/82">Vuln-Dev</a>. Low-traffic vulnerability research and exploit development mailing list, hosted by SecurityFocus.
+<li><a href="http://www.securityfocus.com/archive/101">Pen-Test</a>. Another mailing list from SecurityFocus, dedicated to security testing and network auditing.
+<li><a href="https://lists.immunityinc.com/mailman/listinfo/dailydave">DailyDave</a>. The premier list for discussion of security issues, 0days, and reverse engineering.
+<li><a href="https://lists.alchemistowl.org/mailman/listinfo/cabal">Cabal</a>. Marketing-free security mailing list dedicated to discussions which are too long to fit in Twitter.
+<li><a href="http://scadasec.email/mailman/listinfo/scadasec">SCADASEC</a>. Discussion group about critical infrastructure protection and SCADA/control systems security.
+<li><a href="http://lists.isecom.org/mailman/listinfo/isecom-research">ISECOM Research</a>. The official mailing list of ISECOM researchers, busy to make sense of security.
+</ul>
+
+<h2><a name="exploits"><font color="navy">[0x08] Exploits</font></a></h2>
+As a hacker and programmer of weird machines, I study how things can go wrong. 
+Here are some of the exploits I've developed during my vulnerability research 
+activities (for educational purposes only).<p>
+
+<b>Linux</b>
+<ul>
+<li><a href="exploits/raptor_chown.c">raptor_chown.c</a>. Linux 2.6.x &lt; 2.6.7-rc3 (CVE-2004-0497). Missing DAC controls in sys_chown() on Linux.
+<li><a href="exploits/raptor_prctl.c">raptor_prctl.c</a>. Linux 2.6.x from 2.6.13 up to versions before 2.6.17.4 (CVE-2006-2451). Suid_dumpable bug.
+<li><a href="exploits/raptor_prctl2.c">raptor_prctl2.c</a>. Linux 2.6.x from 2.6.13 up to versions before 2.6.17.4 (CVE-2006-2451). Via logrotate(8).
+<li><a href="exploits/raptor_truecrypt.tgz">raptor_truecrypt.tgz</a>. TrueCrypt &lt;= 4.3 (CVE-2007-1738). Local privilege escalation via setuid volume mount.
+<li><a href="exploits/raptor_ldaudit">raptor_ldaudit</a>. Local privilege escalation through glibc dynamic linker (CVE-2010-3856). Via crond(8).
+<li><a href="exploits/raptor_ldaudit2">raptor_ldaudit2</a>. Local privilege escalation through glibc dynamic linker (CVE-2010-3856). Via logrotate(8).
+</ul>
+
+<b>Solaris/x86</b>
+<ul>
+<li><a href="exploits/raptor_ucbps">raptor_ucbps</a>. Solaris 8, 9 (CVE-1999-1587). Information leak with /usr/ucb/ps on both SPARC and x86.
+<li><a href="exploits/raptor_sysinfo.c">raptor_sysinfo.c</a>. Solaris 10 (CVE-2006-3824). Kernel memory disclosure with the sysinfo(2) system call.
+<li><a href="exploits/raptor_libnspr">raptor_libnspr</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation oldschool local root.
+<li><a href="exploits/raptor_libnspr2">raptor_libnspr2</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via LD_PRELOAD.
+<li><a href="exploits/raptor_libnspr3">raptor_libnspr3</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via constructor.
+<li><a href="exploits/raptor_peek.c">raptor_peek.c</a>. Solaris 8, 9, 10 (CVE-2007-5225). Kernel memory disclosure with fifofs I_PEEK ioctl(2).
+</ul>
+
+<b>Solaris/SPARC</b>
+<ul>
+<li><a href="exploits/raptor_ucbps">raptor_ucbps</a>. Solaris 8, 9 (CVE-1999-1587). Information leak with /usr/ucb/ps on both SPARC and x86.
+<li><a href="exploits/raptor_rlogin.c">raptor_rlogin.c</a>. Solaris 2.5.1, 2.6, 7, 8 (CVE-2001-0797). Buffer overflow in System V login via rlogin vector.
+<li><a href="exploits/raptor_ldpreload.c">raptor_ldpreload.c</a>. Solaris 2.6, 7, 8, 9 (CVE-2003-0609). Stack-based buffer overflow in the runtime linker ld.so.1.
+<li><a href="exploits/raptor_libdthelp.c">raptor_libdthelp.c</a>. Solaris 7, 8, 9 (CVE-2003-0834). Buffer overflow in CDE libDtHelp via dtprintinfo help feature.
+<li><a href="exploits/raptor_libdthelp2.c">raptor_libdthelp2.c</a>. Solaris 7, 8, 9 (CVE-2003-0834). Buffer overflow in CDE libDtHelp, non-exec stack version.
+<li><a href="exploits/raptor_passwd.c">raptor_passwd.c</a>. Solaris 8, 9 (CVE-2004-0360). Stack-based buffer overflow in the circ() function of passwd(1).
+<li><a href="exploits/raptor_sysinfo.c">raptor_sysinfo.c</a>. Solaris 10 (CVE-2006-3824). Kernel memory disclosure with the sysinfo(2) system call.
+<li><a href="exploits/raptor_xkb.c">raptor_xkb.c</a>. Solaris 8, 9, 10 (CVE-2006-4655). Buffer overflow in the Strcmp() function of X11 XKEYBOARD.
+<li><a href="exploits/raptor_libnspr">raptor_libnspr</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation oldschool local root.
+<li><a href="exploits/raptor_libnspr2">raptor_libnspr2</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via LD_PRELOAD.
+<li><a href="exploits/raptor_libnspr3">raptor_libnspr3</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via constructor.
+<li><a href="exploits/raptor_peek.c">raptor_peek.c</a>. Solaris 8, 9, 10 (CVE-2007-5225). Kernel memory disclosure with fifofs I_PEEK ioctl(2).
+</ul>
+
+<b>AIX</b>
+<ul>
+<li><a href="exploits/raptor_libC">raptor_libC</a>. AIX 5.3, 6.1 (CVE-2009-2669). Arbitrary file creation or overwrite via libC debugging functions.
+</ul>
+
+<b>Windows</b>
+<ul>
+<li><a href="https://github.com/0xdea/MS17-010/blob/master/zzz_exploit.py">zzz_exploit.py</a>. Weaponized;) fork of worawit/sleepya's <a href="https://technet.microsoft.com/en-us/library/security/ms17-010.aspx">MS17-010</a> exploit. Use at your own risk.
+</ul>
+
+<b>Oracle</b>
+<ul>
+<li><a href="exploits/raptor_oraextproc.sql">raptor_oraextproc.sql</a>. Oracle 9i, 10g (CVE-2004-1364). Directory traversal vulnerability in extproc.
+<li><a href="exploits/raptor_oraexec.sql">raptor_oraexec.sql</a>. Exploitation suite for Oracle written in Java, to read/write files and execute OS commands.
+<li><a href="exploits/raptor_orafile.sql">raptor_orafile.sql</a>. File system access suite for Oracle based on the utl_file package, to read/write files.
+</ul>
+
+<b>MySQL</b>
+<ul>
+<li><a href="exploits/raptor_udf.c">raptor_udf.c</a>. Helper dynamic library for local privilege escalation through MySQL run with root privileges.
+<li><a href="exploits/raptor_udf2.c">raptor_udf2.c</a>. Slight modification of raptor_udf.c, it works with recent versions of the open source database.
+<li><a href="exploits/raptor_winudf.zip">raptor_winudf.zip</a>. MySQL UDF backdoor kit for M$ Windows (<a href="https://twitter.com/0xdea/status/801200868343193600">ZIP password</a> is "0xdeadbeef").
+</ul>
+
+<b>Miscellaneous</b>
+<ul>
+<li><a href="exploits/raptor_sshtime">raptor_sshtime</a>. OpenSSH (CVE-2003-0190, CVE-2006-5229). Remote timing attack information leak exploit.
+<li><a href="exploits/raptor_dominohash">raptor_dominohash</a>. Lotus Domino R5, R6 (CVE-2005-2428). Webmail names.nsf password hash dumper.
+</ul>
+
+<h2><a name="code"><font color="navy">[0x10] Code</font></a></h2>
+I'm a polyglot programmer and this section is dedicated to some of the 
+<a href="http://www.ioccc.org/">programs</a> and scripts I've written. 
+Most of this stuff is experimental, standard disclaimer applies.<p>
+
+<b>New School</b>
+<ul>
+<li><a href="https://github.com/0xdea/tactical-exploitation">tactical-exploitation</a> <font color="red">(new)</font>. A modern tactical exploitation toolkit to assist penetration testers.
+<li><a href="https://github.com/0xdea/frida-scripts">frida-scripts</a> <font color="red">(new)</font>. A collection of my <a href="https://www.frida.re/">Frida.re</a> instrumentation scripts to facilitate reverse engineering.
+<li><a href="https://github.com/0xdea/PowerSploit/blob/dev/CodeExecution/Invoke-Shellcode.ps1">Invoke-Shellcode.ps1</a>. Updated cmdlet with -Stealth command line switch (see my <a href="https://github.com/PowerShellMafia/PowerSploit/pull/272">pull request</a>).
+<li><a href="code/samba-hax0r">samba-hax0r</a>. Multi-purpose attack tool for SMB/CIFS network protocols exploitation.
+<li><a href="code/mssql-hax0r">mssql-hax0r</a>. Multi-purpose SQL injection attack tool for advanced Microsoft SQL Server exploitation.
+<li><a href="code/havoc-0.1d.tgz">havoc-0.1d.tgz</a>. Random ARP traffic generator, BOFH style. It can temporarily hose an ethernet segment.
+<li><a href="code/ikenum">ikenum</a>. Script for remote enumeration of supported ISAKMP authentication methods (RFC 2409).
+<li><a href="code/orabackdoor.sql">orabackdoor.sql</a>. Proof-of-concept code to demonstrate how to write a simple backdoor for Oracle.
+<li><a href="code/scan-tools.tgz">scan-tools.tgz</a>. A collection of easily customizable bash scripts for network scanning purposes.
+<li><a href="code/sequel.tgz">sequel.tgz</a>. A collection of simple scripts for performing multiple tasks via SQL injection attacks.
+<li><a href="code/p2s.c">p2s.c</a>. Prism2stumbler is a wireless network stumbler for PRISM2 cards. Tested on Linux with wlan-ng.
+</ul>
+
+<b>Old School</b>
+<ul>
+<li><a href="code/brutus.pl">brutus.pl</a>. Remote login/password bruteforce cracker for TELNET, FTP, POP3, SMTP, and HTTP protocols.
+<li><a href="code/ward.c">ward.c</a>. Fast wardialer for <a href="http://www.mindspring.com/~blackhart/">UNIX</a> systems, it scans a list of phone numbers hunting for active modems.
+<li><a href="code/rasbrute.bat">rasbrute.bat</a>. Very basic and easily customizable DOS batch script for remote bruteforcing of M$ PPTP.
+<li><a href="code/bounce.c">bounce.c</a>. Simple netcat-like bouncer client that pipes on localhost an active TCP session.
+<li><a href="code/x25-tools.tgz">x25-tools.tgz</a>. A collection of multi-purpose X.25 scanners based on vudu, including nuascan and cudscan.
+<li><a href="code/psibrute.com">psibrute.com</a>. This DCL script abuses the old PSI_MAIL trick on VMS/OpenVMS to remotely find valid users.
+<li><a href="code/backdoor.bas">backdoor.bas</a>. Simple VMS/OpenVMS lib$spawn() setuid-like backdoor (easily portable to other languages).
+<li><a href="code/autoscan.pl">autoscan.pl</a>. Autonet NUA scanner for the old autonet x25pad gateway, based on the brutus.pl engine.
+</ul>
+
+<b>Exploitation</b>
+<ul>
+<li><a href="code/abo-exploits.tgz">abo-exploits.tgz</a>. Advanced buffer overflows study. See gera's <a href="http://community.core-sdi.com/~gera/InsecureProgramming/">vulnerable code</a> exploited in different ways.
+<li><a href="code/fs-exploits.tgz">fs-exploits.tgz</a>. Format strings exploitation study. Commented solutions to gera's fs <a href="http://community.core-sdi.com/~gera/InsecureProgramming/">vulnerable code</a> series.
+<li><a href="code/vulndev-exploits.tgz">vulndev-exploits.tgz</a>. Exploit code for <a href="http://www.securityfocus.com/archive/82">vuln-dev</a> challenges. Currently, there are 2 accomplished challenges.
+<li><a href="code/linux-x86-exploits.tgz">linux-x86-exploits.tgz</a>. Linux/x86 vulnerable code study. Currently, there are 86 example exploits included.
+<li><a href="code/solaris-sparc-exploits.tgz">solaris-sparc-exploits.tgz</a>. Solaris/SPARC vulnerable code study. Currently, there are 19 example exploits.
+<li><a href="code/shellcode.tgz">shellcode.tgz</a>. An old collection of Linux and BSD shellcode, illustrating different concepts and techniques.
+<li><a href="code/libc-search.c">libc-search.c</a>. Quick and easily-adaptable libc symbol/pattern search helper. Tested on Linux.
+</ul>
+
+<b>Esoteric</b>
+<ul>
+<li><a href="https://github.com/0xdea/xorpd-solutions">xchg rax,rax solutions</a>. My attempt at tackling the x86_64 asm riddles in xorpd's <a href="http://www.xorpd.net/pages/xchg_rax/snip_00.html">xchg rax,rax</a> book.
+<li><a href="code/poly.tgz">poly.tgz</a>. An old collection of polyglots, programs that may be compiled in more than one language.
+</ul>
+
+<h2><a name="config"><font color="navy">[0x20] Configurations</font></a></h2>
+Here are some configuration templates for common information security 
+solutions. YMMV.
+<p>
+
+<b>Packet Filters</b>
+<ul>
+<li><a href="https://github.com/0xdea/configurations/blob/master/firewall/rc.iptables">rc.iptables</a>. Sample basic ruleset for the configuration of a Linux stateful host/masq firewall.
+<li><a href="https://github.com/0xdea/configurations/blob/master/firewall/pf.conf">pf.conf</a>. Sample PF/NAT ruleset for the configuration of a FreeBSD/OpenBSD stateful host/masq firewall.
+<li><a href="conf/MacOSXFirewall.tgz">MacOSXFirewall.tgz</a>. Startup script and basic ruleset for the ipfw firewall bundled with Mac OS X.
+<li><a href="conf/ipf.tgz">ipf.tgz</a>. Sample rulesets for the IPFilter stateful firewall, with detailed comments. Tested on OpenBSD 2.9.
+</ul>
+
+<b>Application Firewalls</b>
+<ul>
+<li><a href="conf/modsecurity-2.6.8.conf">modsecurity-2.6.8.conf</a>. Sample configuration file for the ModSecurity application firewall v2.6.8.
+<li><a href="conf/modsecurity-2.5.12.conf">modsecurity-2.5.12.conf</a>. Sample configuration file for the ModSecurity application firewall v2.5.12.
+</ul>
+
+<b>Virtual Private Networks</b>
+<ul>
+<li><a href="https://github.com/0xdea/configurations/blob/master/tor/torrc">torrc</a>. Sample configuration file for a Tor relay/bridge. Tested on Tor 0.3.0.10 on FreeBSD.
+<li><a href="https://github.com/0xdea/configurations/tree/master/vpn">openvpn-*.conf</a>. Sample OpenVPN client and server configurations. Tested on Debian GNU/Linux 8.7.
+<li><a href="conf/isakmpd.tgz">isakmpd.tgz</a>. Sample IKE configuration files for a basic IPsec VPN. Tested on OpenBSD 2.9.
+<li><a href="conf/isakmpd-x509.tgz">isakmpd-x509.tgz</a>. Sample IKE configuration files for an IPsec VPN using X.509 certs. Tested on OpenBSD 3.2.
+<li><a href="conf/isakmpd-road.tgz">isakmpd-road.tgz</a>. Sample IKE configuration files for a road warrior IPsec VPN. Tested on OpenBSD 3.2.
+</ul>
+
+<h2><a name="stuff"><font color="navy">[0x40] /dev/random</font></a></h2>
+A collection of other random stuff.<p>
+
+<ul>
+<li><a href="stuff/rtfm.gif">RTFM</a>. Hey, you! Yeah, you! Don't ask stupid questions, always Read The F* Manual before.
+<li><a href="stuff/raptor.jpg">Utah Bengaled Raptor</a>. An impressive 8 foot tall, 1 ton wooden prehistoric monster, created by artist Matt Kron.
+<li><a href="stuff/defaced.html">0xdefaced</a>. This is the archived 0xdeadbeef dot info defacement hoax made for April Fools' Day 2004.
+<li><a href="stuff/voodoo.jpg">Voodoo</a>. A picture of my old and glorious Acer TravelMate 345T notebook, running OpenBSD.
+<li><a href="stuff/hp-crash.jpg">HP JetDirect Crash</a>. Cool stack dump printed on paper by my HP JetDirect printer after a Denial of Service.
+<li><a href="stuff/insert-coin.jpg">Insert Coin</a>. My kinda original HP JetDirect printer's new display (yeah, I was bored that day).
+<li><a href="stuff/itapac.jpg">Control Room</a>. ITAPAC (DNIC 2222) is the most known Italian X.25 network, still alive as of 2006.
+<li><a href="stuff/vi.gif">Vi Assistant</a>. Fear the infamous clippy-like assistant for vim. Resistance is futile, you'll be assimilated.
+<li><a href="stuff/sidecar.jpg">Sidecar Wardriving</a>. Funny picture of a l33t wardriving session on an original <a href="http://www.ural.com/">Ural</a> sidecar.
+<li><a href="stuff/pentest.jpg">Pen-test Moderation</a>. Cheap viagra spam and SecurityFocus "penetration" test mailing list moderation fun.
+<li><a href="stuff/blocked.jpg">This Site is Blocked</a>. A screenshot of UAE's Internet Access Management Policy in action.
+<li><a href="stuff/vault7.png">Vault 7</a>. Some of my shellcodes are among the CIA tools released by Wikileaks. Achievement unlocked!
+</ul>
+
+<hr>
+<a href="http://www.linkedin.com/in/raptor"><img src="linkedin.png" width="32" height="32" border="0" alt="View Marco Ivaldi's profile on LinkedIn"></a>
+<a href="http://www.twitter.com/0xdea"><img src="twitter.png" width="32" height="32" border="0" alt="Follow @0xdea on Twitter"></a>
+<a href="https://www.reddit.com/user/0xdea"><img src="reddit.png" width="32" height="32" border="0" alt="@0xdea on Reddit"></a>
+<a href="https://github.com/0xdea"><img src="github.png" width="32" height="32" border="0" alt="@0xdea on GitHub"></a>
+<a href="stuff/ralphy.jpg"><img src="ralphy.png" alt="Ralphy!" height="31" width="31" border="0"></a>
+<a href="http://www.slackware.com/"><img src="slack.png" alt="Slackware" height="32" width="32" border="0"></a>
+<a href="https://www.freebsd.org/"><img src="bsd.png" alt="BSD" height="32" width="32" border="0"></a>
+<img src="km.jpg" alt="Krav Maga" height="31" width="32" border="0">
+<a href="http://www.principiadiscordia.com/"><img src="fnord.png" alt="Hail Eris!" height="31" width="33" border="0"></a>
+<br>
+
+<font size=2>
+Copyright (c) 1998-2018<font color="red">*</font> Marco Ivaldi at 0xdeadbeef dot info <font color="red">*</font>celebrating 20 years!
+</font>
+
+</body>
+</html>

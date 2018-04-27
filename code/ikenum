@@ -1,0 +1,133 @@
+#!/bin/bash
+
+#
+# $Id: ikenum,v 1.1 2007/04/12 08:24:22 raptor Exp $
+#
+# ikenum v0.1 - Query IKE Supported Authentication Methods
+# Copyright (c) 2007 Marco Ivaldi <raptor@0xdeadbeef.info>
+#
+# This script enumerates the ISAKMP (IKE) Authentication Methods (see RFC 2409 
+# Appendix A) supported by the target IPsec VPN concentrator specified on the
+# command line. Ideally, it should be run together with ike-scan, such as in 
+# the following usage example:
+#
+# # cidr 192.168.0.0/24 2> hosts
+# # ike-scan -f hosts
+# Starting ike-scan with 256 host (http://www.nta-monitor.com/tools/ike-scan/)
+# 192.168.0.194  Notify message 14 (NO-PROPOSAL-CHOSEN) [...]
+# # ikenum 192.168.0.194
+# [Main Mode]
+# 3:      RSA signatures
+# [Aggressive Mode]
+# 1:      Pre-shared key
+# # ike-scan -m 3 -v --showbackoff 192.168.0.194
+# [...]
+# 192.168.0.194  Implementation guess: Cisco IOS 12.1, 12.2 or 12.3 / [...]
+# # ike-scan -m 1 -A -v --showbackoff 192.168.0.194
+# [...]
+# 192.168.0.194  Implementation guess: Cisco IOS 12.1, 12.2 or 12.3 / [...]
+# 
+
+# Command line
+host=$1
+
+# Local fuctions
+function header() {
+	echo ""
+	echo "ikenum v0.1 - Query IKE Supported Authentication Methods"
+	echo "Copyright (c) 2007 Marco Ivaldi <raptor@0xdeadbeef.info>"
+	echo ""
+}
+
+function footer() {
+	echo ""
+	exit 0
+}
+
+function usage() {
+	header
+	echo "usage  : ./ikenum <host>"
+	echo "example: ./ikenum 192.168.0.194"
+	footer
+}
+
+function notfound() {
+	header
+	echo "error  : ike-scan not found"
+	footer
+}
+
+# Check if curl is there
+curl=`which ike-scan 2>/dev/null`
+if [ $? -ne 0 ]; then
+	notfound
+fi
+
+# Input control
+if [ -z "$1"  ]; then
+	usage
+fi
+
+header
+
+echo -e "Target:\t$host"
+
+# Enumerate authentication methods supported in Main Mode
+echo ""
+echo "[Main Mode]"
+for method in `seq 1 5` 64221 `seq 65001 65010`
+do
+	ike-scan -m $method $host | grep "Handshake returned" >/dev/null
+	if [ $? -eq 0 ]; then
+		case $method in
+			1) echo -e "1:\tPre-shared key";
+			;;
+			2) echo -e "2:\tDSS signatures";
+			;;
+			3) echo -e "3:\tRSA signatures";
+			;;
+			4) echo -e "4:\tEncryption with RSA";
+			;;
+			5) echo -e "5:\tRevised encryption with RSA";
+			;;
+			64221) echo -e "64221:\tCheck Point hybrid mode";
+			;;
+			65001) echo -e "65001:\tGSS (Windows \"Kerberos\")";
+			;;
+			# 65001 to 65010 is XAUTH
+			*) echo -e "$method:\tXAUTH";
+			;;
+		esac
+	fi
+done
+
+# Enumerate authentication methods supported in Aggressive Mode
+echo ""
+echo "[Aggressive Mode]"
+for method in `seq 1 5` 64221 `seq 65001 65010`
+do
+	ike-scan -A -m $method $host | grep "Handshake returned" >/dev/null
+	if [ $? -eq 0 ]; then
+		case $method in
+			1) echo -e "1:\tPre-shared key";
+			;;
+			2) echo -e "2:\tDSS signatures";
+			;;
+			3) echo -e "3:\tRSA signatures";
+			;;
+			4) echo -e "4:\tEncryption with RSA";
+			;;
+			5) echo -e "5:\tRevised encryption with RSA";
+			;;
+			64221) echo -e "64221:\tCheck Point hybrid mode";
+			;;
+			65001) echo -e "65001:\tGSS (Windows \"Kerberos\")";
+			;;
+			# 65001 to 65010 is XAUTH
+			*) echo -e "$method:\tXAUTH";
+			;;
+		esac
+	fi
+done
+
+footer

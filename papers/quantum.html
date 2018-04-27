@@ -1,0 +1,384 @@
+<html>
+<head><title>Introduzione al Quantum Computing.</title></head>
+<body>
+
+<center>
+<h2>Introduzione al Quantum Computing.</h2>
+<h4>di Marco Ivaldi
+(<a href="mailto:raptor@antifork.org">raptor@antifork.org</a>)
+</h4>
+</center>
+<br>
+
+
+<b>Un nuovo modo di sfruttare la natura.</b><p>
+
+Molte tappe nella storia della tecnologia hanno comportato la scoperta di nuovi
+modi per sfruttare la natura: l'utilizzo di varie risorse fisiche come 
+materiali, forze e sorgenti di energia ha fatto si' che l'uomo compisse
+progressi tecnologici sempre piu' grandi. Nel corso del Ventesimo Secolo
+l'informazione e' entrata a far parte della tecnologia, a partire dal momento 
+in cui l'invenzione dei computers ha permesso di processare informazioni 
+complesse all'esterno dei cervelli umani. La stessa storia dei calcolatori e' 
+intessuta di una sequenza di cambiamenti da un tipo di implementazione fisica 
+ad un altro, dalle prime valvole ai circuiti integrati di oggi. Fino alle 
+odierne tecniche piu' avanzate che ci consentono di costruire componenti di 
+dimensioni inferiori al micron; e presto avremo chip ancora piu' ridotti, sino 
+a raggiungere il punto in cui le porte logiche necessarie al funzionamento dei 
+computers saranno costituite di pochi atomi ciascuna.<p>
+
+Sul piano degli atomi, la materia obbedisce alle regole della meccanica
+quantistica, molto differenti da quelle della fisica classica, che invece 
+determinano le proprieta' delle porte logiche convenzionali. Per questo 
+motivo, se i computers dovranno diventare di dimensioni cosi' ridotte nel
+prossimo futuro, una tecnologia completamente nuova dovra' sostituire cio' che 
+utilizziamo ora. La tecnologia quantistica, pero', puo' offrire molto di piu' 
+della diminuzione delle dimensioni e dell'aumento della velocita' di clock dei 
+calcolatori: essa puo' aprire la strada a calcoli di un genere completamente 
+nuovo, con algoritmi basati su principi quantistici diversi da quelli a cui 
+siamo abituati. Questa nuova tecnologia prende il nome di <i>Quantum 
+Computing</i>.<p>
+
+Il Quantum Computing nasce dall'unione tra Teoria dell'Informazione classica,
+Informatica e Fisica Quantistica. Questo breve articolo vuole essere
+un'introduzione al Quantum Computing e all'argomento molto vasto della
+nuova Teoria dell'Informazione Quantistica. La cosa che stupisce maggiormente
+e' che la Teoria dell'Informazione e la Meccanica Quantistica si sposano 
+in effetti molto bene, dando vita ad interessanti implicazioni.<p><br>
+
+
+<b>Un po' di storia.</b><p>
+
+I fondamenti dell'Informatica sono stati formulati piu' o meno 
+contemporaneamente alla Teoria dell'Informazione di Shannon, fatto che non
+deve essere considerato come una mera coincidenza. Il padre dell'Informatica e'
+probabilmente Alan Turing (1912-1954), ed il suo profeta e' Charles Babbage
+(1791-1871). Babbage, infatti, ha concepito gli elementi essenziali di un
+calcolatore moderno, nonostante ai suoi tempi non esistesse la tecnologia
+necessaria a realizzare praticamente le sue idee. E' dovuto passare un
+intero secolo prima che l'Analytical Engine di Babbage fosse migliorata in
+quello che Turing ha descritto come la Universal Turing Machine, verso la
+meta' degli anni 30. I piu' grandi meriti di Turing sono stati il chiarire con
+estrema precisione di che cosa debba essere capace una macchina per il calcolo
+e l'enfatizzare il ruolo del software e della programmazione, piu' ancora
+di quanto non avesse fatto il suo predecessore.<p>
+
+I moderni calcolatori elettronici non sono ne' Macchine di Turing ne' Motori
+di Babbage; ciononostante sono basati su principi molto simili e possiedono
+un potere computazionale equivalente. Senza scendere troppo nel dettaglio,
+vogliamo porre l'accento sul fatto che durante la storia dello sviluppo
+dei computers non vi e' stato mai alcun sostanziale cambiamento dell'idea 
+essenziale di calcolatore o di come esso operi. Tutti i miglioramenti sono 
+quantificabili in termini di velocita' e dimensioni. Ed ecco che cosa 
+differenzia il Quantum Computing dall'Informatica classica: <i>la Meccanica 
+Quantistica per la prima volta fa intravvedere la possibilita' di un 
+cambiamento sostanziale dei computers e del loro modo di operare</i>.<p>
+
+Cerchiamo di capire semplicemente in che termini ed in che modo.<p><br>
+
+
+<b>Dal bit al qubit.</b><p>
+
+La caratteristica fondamentale dell'informazione e' la possibilita' di essere
+codificata in un numero di modi virtualmente infinito. Ad esempio la frase
+italiana <i>"Alice e' a casa mia"</i> ed il corrispettivo francese 
+<i>"Alice est chez-moi"</i>
+contengono la stessa informazione, espressa in codici differenti.<p>
+
+Comunque sia, cio' che accomuna tutti i modi di esprimere informazione e' la
+necessita' di strumenti fisici. Le parole parlate, infatti, sono costituite da 
+fluttuazioni nella pressione dell'aria, quelle scritte da molecole di 
+inchiostro su carta, persino gli stessi pensieri dipendono dai neuroni. Il 
+motto dei ricercatori e' pertanto: "nessuna informazione senza la sua 
+rappresentazione fisica!".<p>
+
+I computers classici che tutti conosciamo utilizzano come unita' di informazione
+di base il cosiddetto <i>bit</i>. Da un punto di vista prettamente fisico il 
+bit e' un sistema a 2 stati: puo' infatti essere indotto in uno dei due stati
+distinti rappresentanti 2 valori logici - no o si', falso o vero, o
+semplicemente 0 o 1. In termini pratici, senza scendere nei dettagli 
+implementatitivi, il bit viene realizzato utilizzando le proprieta' dell'energia
+elettrica (assenza di carica o presenza di carica). Un bit di informazione
+puo' ovviamente venire rappresentato anche attraverso altri mezzi: ad esempio
+con 2 differenti polarizzazioni di luce o 2 differenti stati elettronici di
+un atomo. Ed e' proprio quando arriviamo all'infinitamente piccolo che la
+Meccanica Quantistica entra in gioco, informandoci che se un bit puo' esistere
+in 2 stati distinti puo' anche esistere in una loro <i>sovrapposizione coerente
+</i>.  Si tratta di un terzo stato, che non ha un analogo classico in generale,
+in cui l'atomo rappresenta entrambi i valori 0 e 1 contemporaneamente.
+Per aiutare a comprendere come una quantita' fisica possa assumere 2 valori
+in contemporanea viene in genere illustrato un semplice esperimento di 
+riflessione dei fotoni, che noi non tratteremo, limitandoci a segnalarlo
+tra i Riferimenti.<p>
+
+Occupiamoci invece di ampliare ulteriormente il concetto di sovrapposizione
+di numeri. Consideriamo un registro composto da 3 bit fisici. Un registro
+a 3-bit classico puo' contenere esattamente uno degli 8 diversi numeri
+possibili: in altre parole esso puo' trovarsi in una delle otto possibili 
+configurazioni <i>000, 001, 010, ..., 111</i>, rappresentazioni binarie dei 
+numeri da 0 a 7. A differenza di cio', un registro quantistico composto da 
+3-qubit (come vengono chiamate le unita' di informazione di base nel Quantum 
+Computing, corrispettive del bit classico) e' in grado di contenere fino a 
+tutti e 8 i numeri contemporaneamente in una sovrapposizione quantistica.<p>
+
+Il fatto che 8 numeri differenti possano essere fisicamente presenti in
+contemporanea nello stesso registro e' una diretta conseguenza delle proprieta'
+dei qubit, e ha delle grandi implicazioni dal punto di vista della Teoria
+dell'Informazione. Se aggiungessimo piu' qubit al registro la sua capacita' di
+memorizzare informazioni crescerebbe in maniera esponenziale: 4 qubit possono
+immagazzinare fino a 16 numeri allo stesso tempo, ed in generale L qubit sono
+in grado di conservare 2^L numeri contemporaneamente. Un registro di 250-qubit,
+per capirci, composto essenzialmente di 250 atomi, sarebbe capace di
+memorizzare piu' numeri contemporaneamente di quanti siano gli atomi presenti
+nell'Universo conosciuto. Un dato senza dubbio scioccante.<p>
+
+In termini pratici, pero', quando misuriamo il contenuto di un registro siamo
+in grado di vedere solamente uno dei numeri della sovrapposizione: cio'
+rappresenta sicuramente un problema nel caso di quantistica applicata
+a problemi tradizionali molto semplici. Ma nel caso in cui dovessimo effettuare
+un calcolo quantistico piu' complesso, che consista di piu' passaggi e
+pertanto piu' operazioni sui registri, il vero vantaggio del Quantum Computing
+inizierebbe a manifestarsi: quando un registro contiene una sovrapposizione
+di molti numeri differenti, infatti, un calcolatore quantistico e' in grado di
+effettuare operazioni matematiche su tutti loro contemporaneamente, allo stesso
+costo in termini computazionali dell'operazione eseguita su uno solo dei numeri.
+Ed il risultato sara' a sua volta una sovrapposizione coerente di piu' numeri.
+In altre parole: e' possibile eseguire un massiccio calcolo parallelo ad
+un costo computazionale irrisorio rispetto a quello richiesto dai computers
+tradizionali, che avrebbero bisogno per compiere la stessa operazione di
+ripetere il calcolo 2^L volte o di poter contare su 2^L processori paralleli.<p>
+
+In breve, ecco riassunto quello che ci offre un calcolatore quantistico: un
+enorme guadagno di risorse computazionali come tempo e memoria, anche se 
+solamente per certi tipi di operazione.<p><br>
+
+
+<b>Algoritmi quantistici.</b><p>
+
+Cerchiamo ora di fare luce sulle possibili applicazioni dei calcolatori
+quantistici. Come abbiamo accennato le leggi della fisica ci permettono di
+leggere un solo risultato da un registro, anche se esso contiene 2^L numeri
+differenti: per questo motivo il Quantum Computing non ci porta un vantaggio
+immediato in termini di conservazione dell'informazione. Sapendo pero' che
+grazie ad una proprieta' dei quanti molto importante nota con il nome di
+<i>quantum interference</i> siamo in grado di ottenere un risultato finale 
+singolo che dipende logicamente da tutti i 2^L risultati intermedi, possiamo 
+comprendere gli algoritmi che sono stati introdotti dai ricercatori.<p>
+
+Consideriamo ad esempio l'algoritmo scoperto da Lov Grover dei Bell Labs della
+AT&T, che realizza una ricerca in una lista non ordinata di N elementi in
+radice di N passi. E' lampante per chi non e' totalmente digiuno di informatica
+che un algoritmo del genere e' impossibile da realizzare con le tecniche
+classiche. Pensiamo, ad esempio, di dover ricercare un numero di telefono
+specifico all'interno di un elenco contenente 1 milione di elementi, ordinati 
+alfabeticamente: e' ovvio che nessun algoritmo classico piu' migliorare il
+metodo di ricerca a forza bruta che consiste nella semplice scansione degli 
+elementi fino a quando non si trova quello che ci interessa. Gli accessi alla 
+memoria richiesti nel caso medio saranno pertanto 500.000, che e' dello stesso
+ordine di grandezza di N (O(N), come viene comunemente espresso in notazione 
+matematica).<p>
+
+Un computer quantistico e' invece in grado di esaminare tutti gli elementi 
+simultaneamente, nel tempo di un singolo accesso alla memoria: se fosse 
+programmato per stampare semplicemente il risultato a questo punto, pero', non 
+costituirebbe un miglioramento rispetto all'algoritmo classico, perche' 
+solamente uno sul milione dei percorsi di calcolo effettuati conterra' 
+l'elemento a cui siamo interessati, e per conoscerlo dovremo per forza di cose 
+ispezionarli tutti.<p>
+
+Se pero' lasciamo l'informazione quantistica ricavata all'interno del
+calcolatore senza misurarla, possiamo applicarvi direttamente un'altra
+operazione che automaticamente andra' ad influire su altri percorsi
+(che comunemente vengono chiamati <i>universi</i>). In questo modo 
+l'informazione riguardante l'elemento ricercato e' diffusa, attraverso la 
+quantum interference, ad altri universi. Si e' verificato che se questa 
+operazione che genera interferenza viene ripetuta radice di N volte (nel nostro 
+caso 1000), l'informazione che ci interessa sara' accessibile attraverso il 
+misuramento con una probabilita' di 0.5: in altre parole, si sara' diffusa in 
+piu' della meta' degli universi possibili. Pertanto ulteriori ripetizioni
+dell'algoritmo ci permetteranno di trovare il risultato che ci interessa
+con una probabilita' molto prossima ad 1.<p>
+
+Nonostante l'algoritmo di Grover sia uno strumento estremamente versatile e 
+potente, in pratica la ricerca in un database fisico sara' difficilmente
+una delle sue applicazioni fondamentali, almeno fino a quando la memoria
+classica restera' molto piu' economica di quella quantistica. Per queste
+ragioni, il campo in cui questo algoritmo da' il meglio di se' e' sicuramente
+quello della ricerca algoritmica, nella quale i dati non sono conservati
+in memoria, ma sono generati al volo da un programma: pensiamo ad esempio ad
+un calcolatore quantistico programmato per giocare a scacchi, che utilizzi
+l'algoritmo di Grover per investigare tutte le possibili mosse a partire da
+una determinata configurazione della scacchiera.<p>
+
+Come Gilles Brassard dell'Universita' di Montreal ha recentemente fatto notare,
+inoltre, un'altra importantissima applicazione dell'algoritmo di Grover
+e' nel campo della crittanalisi, per attaccare schemi crittografici classici
+come il Data Encryption Standard (DES) con un approccio a forza bruta.
+Crackare il DES fondamentalmente richiede una ricerca tra tutte le 2^56 =
+7 x 10^16 possibili chiavi. Un computer classico, potendo esaminarne ad
+esempio 1 milione al secondo, impiegherebbe migliaia di anni a scoprire
+quella corretta; un computer quantistico che utilizzi l'algoritmo di Grover,
+invece, ci metterebbe meno di 4 minuti.<p>
+
+Per qualche strana coincidenza, molte delle caratteristiche superiori dei
+calcolatori quantistici hanno applicazioni nel campo della crittologia.
+Oltre all'algoritmo di ricerca di Grover che abbiamo appena visto, c'e'
+quello scoperto nel 1994 da Peter Shor (un altro ricercatore dei Bell Labs) 
+per la fattorizzazione efficiente di numeri interi grandi. In questo caso la
+differenza di performance tra gli algoritmi quantistici e quelli classici
+e' ancora piu' spettacolare.<p>
+
+I matematici sono convinti (anche se di fatto la cosa non e' mai stata 
+dimostrata in maniera rigorosa) che la fattorizzazione di un numero intero 
+con N cifre decimali sia particolarmente pesante in termini computazionali: 
+per portare a termine l'operazione, qualsiasi computer classico ha bisogno 
+di un numero di passi che cresce esponenzialmente con N. Questo significa 
+che aggiungendo una semplice cifra al numero da fattorizzare il tempo 
+necessario a compiere l'operazione si moltiplica per un fattore fisso.  Per 
+rendere meglio l'idea, basti pensare che fino ad ora il numero piu' grande 
+che e' stato fattorizzato, nel corso di una "gara" tra matematici, aveva 129 
+cifre. Nessuno e' in grado di concepire la possibilita' di fattorizzare numeri 
+di migliaia di cifre con i metodi classici: il calcolo richiederebbe piu' volte 
+l'eta' stimata dell'Universo.<p>
+
+In contrasto, i calcolatori quantistici possono fattorizzare numeri di
+migliaia di cifre in una frazione di secondo, ed il tempo di esecuzione
+cresce solamente secondo il cubo del numero delle cifre (e non 
+esponenzialmente come nel caso dell'algoritmo classico).<p>
+
+La cosa piu' interessante e' che sulla difficolta' di calcolo dell'operazione
+di fattorizzazione si basa la sicurezza di quelli che sono al momento i
+metodi di cifratura piu' utilizzati ed universalmente riconosciuti come
+inattaccabili: stiamo parlando in particolar modo del sistema RSA (Rivest, 
+Shamir e Adleman). Tale algoritmo crittografico e' largamente impiegato per 
+proteggere le comunicazioni piu' riservate e le transazioni bancarie, che si 
+avvalgono di uno schema crittografico a chiave asimmetrica (la crittografia 
+a chiave pubblica e' stata scoperta originariamente da Ellis e Cocks del GCHQ 
+inglese). Quando dovesse essere costruita un'engine quantistica per la 
+fattorizzazione, tutti i sistemi crittografici a chiave asimmetrica
+diverranno completamente insicuri. Probabilmente questo momento e' ancora
+lontano, ma di fatto le recenti scoperte ci fanno capire che e' ora di
+pensare ad altri metodi crittografici, in previsione di quello che ci puo'
+riservare il futuro.<p><br>
+
+
+<b>Che cosa ci riserva il futuro?</b><p>
+
+In linea di principio siamo gia' in grado di costruire un calcolatore 
+quantistico: cominciamo con delle semplici porte logiche quantistiche, che 
+come nel caso delle porte classiche sono dei semplici devices in grado di 
+eseguire un'operazione elementare su uno o due qubit. Ovviamente esse 
+differiscono dalle loro controparti classiche, perche' sono in grado di operare 
+anche su sovrapposizioni quantistiche. Tali porte dovranno poi essere 
+collegate in reti, per poter operare come un unico computer.<p>
+
+Al crescere del numero delle porte quantistiche nella rete, pero', ci imbattiamo
+rapidamente in alcuni problemi pratici molto seri. Piu' qubit sono coinvolti, 
+piu' diventa complesso gestire l'interazione che genera la quantum
+interference. A parte le difficolta' derivanti dal dover lavorare a livello
+di singolo atomo e singolo fotone, uno dei problemi piu' importanti e' quello
+di impedire che anche l'ambiente venga modificato dalle interazioni che
+generano le sovrapposizioni quantistiche. Piu' componenti vi sono, piu' si fa
+probabile che l'informazione quantistica si diffonda all'esterno del
+computer per perdersi nell'ambiente, compromettendo i risultati del calcolo.
+Questo processo prende il nome di "decoerenza", e per evitarlo gli ingegneri
+dovono riuscire a produrre sistemi sub-microscopici nei quali i qubit si
+influenzano l'un l'altro, ma sono completamente separati dall'ambiente 
+esterno. Per lo stesso motivo, e' immediato osservare che gli effetti della
+quantum interference che rendono realizzabili algoritmi come quello di Shor
+sono estremamente fragili: i computer quantistici sono molto sensibili
+alle interferenze provenienti dall'esterno.<p>
+
+Ed e' a questo punto che entra in gioco la nuova Teoria dell'Informazione
+Quantistica, nata dal connubio tra Teoria dell'Informazione classica e
+Quantum Computing: e' infatti possibile, combinando elementi delle due
+discipline, realizzare calcolatori quantistici molto meno sensibili alle
+interferenze esterne, grazie a quella che viene chiamata <i>quantum error
+correction</i>. Solo nel 1996 sono stati realizzati due documenti di
+Calderbank e Shor, e indipendentemente Steane, che hanno stabilito i
+principi generali con cui il quantum information processing puo' essere
+utilizzato per combattere una vasta gamma di interferenze in un sistema
+quantistico. Molti progressi sono stati fatti successivamente nell'opera
+di generalizzazione di queste idee: in particolare, un importante sviluppo
+c'e' stato con la dimostrazione effettuata da Shor e Kitaev che la correzione 
+degli errori puo' avere luogo anche quando le stesse operazioni correttive sono
+imperfette. Questi metodi conducono ad un concetto di Quantum Computing <i>fault
+tolerant</i>. Se la correzione degli errori in se' non garantisce un calcolo
+quantistico accurato, poiche' non puo' combattere tutti i tipi di
+interferenza, il fatto che sia possibile rappresenta comunque uno sviluppo
+significativo che ci fa ben sperare per il futuro.<p>
+
+Un'altra importante implicazione del connubio tra Meccanica Quantistica
+e Teoria dell'Informazione, derivante direttamente dalle proprieta' di
+base dei sistemi quantistici applicate alla pratica, e' la
+<i>quantum cryptography</i>. La crittografia quantistica offre numerose
+idee innovative, tra le quali la piu' interessante (e la piu' seguita) e' la
+<i>quantum key distribution</i>. Si tratta di un metodo molto ingegnoso secondo
+il quale gli stati quantistici trasmessi sono utilizzati per eseguire una
+comunicazione molto particolare: creare in due locazioni separate una coppia
+di sequenze di bit randomiche identiche, impedendone l'intercettazione da
+terze parti. Si nota subito come questo possa rivelarsi molto utile nel
+caso dello scambio di chiavi crittografiche per cifrari simmetrici, operazione
+che necessita di un canale assolutamente sicuro. La caratteristica fondamentale
+di questo meccanismo per il key exchange discende direttamente dai principi 
+della meccanica quantistica, che garantiscono la conservazione 
+dell'informazione, in modo che se essa arriva a destinazione si puo' essere
+sicuri che non e' andata da nessun'altra parte (in altre parole, non e'
+stata intercettata). Di conseguenza, l'intero problema delle chiavi
+compromesse, che riempie da secoli gli annali della storia dello spionaggio, 
+e' evitato completamente avvalendosi della struttura del mondo naturale e delle 
+sue leggi.<p>
+
+Tra gli effetti del Quantum Computing che piu' rischiano di influenzare il
+nostro futuro, uno dei piu' interessanti e' sicuramente la rivoluzione del
+concetto stesso di dimostrazione matematica. Quando abbiamo a che fare con
+computers classici, infatti, possiamo descrivere matematicamente con facilita' 
+le operazioni da essi compiute. In tal modo siamo in grado di fornire
+una prova della correttezza del calcolo svolto che soddisfi la definizione
+classica: <i>"una sequenza di proposizioni ognuna delle quali e' un assioma o
+deriva da proposizioni precedenti nella sequenza attraverso le regole
+standard di inferenza"</i>. Con il Quantum Computing questa definizione non e'
+piu' valida: d'ora in avanti una dimostrazione dovra' essere considerata come
+un processo (il calcolo stesso, e non una registrazione di tutti i suoi 
+passaggi): in futuro e' estremamente probabile che un calcolatore quantistico
+riesca a dimostrare teoremi attraverso metodi che un cervello umano (o un
+calcolatore classico) non e' in grado nella maniera piu' assoluta di 
+controllare, perche' se la "sequenza di proposizioni" corrispondente alla
+dimostrazione intesa nel senso classico venisse stampata, la carta riempirebbe
+l'Universo osservabile per molte volte.<p>
+
+Riguardo alla realizzabilita' di un calcolatore quantistico complesso, molti
+studiosi sono tutt'ora scettici. Recentemente, pero', l'IBM ha costruito
+un primo esempio di computer quantistico, con la prima implementazione
+funzionante dell'algoritmo di fattorizzazione di Shor. Come si legge
+su <a href="http://www.research.ibm.com/resources/news/20011219_quantum.shtml">
+research.ibm.com</a>,
+i ricercatori hanno realizzato un calcolatore a 7-qubit e fattorizzato il
+numero 15 nei suoi fattori primi 3 e 5. Nonostante l'apparente semplicita',
+si tratta del calcolo quantistico piu' complesso mai effettuato fino ad
+ora, e lascia ben sperare per gli sviluppi futuri di questa affascinante
+materia di studio.<p><br>
+
+
+<b>Riferimenti.</b><p>
+
+<li> <a href="http://www.qubit.org">Qubit</a>. Il sito contiene una vasta 
+documentazione, compresa quella riguardante l'esperimento della riflessione 
+dei fotoni citato nell'articolo.
+
+<li> <a href="http://tph.tuwien.ac.at/~oemer/qcl.html">QCL</a>. Quantum 
+Computation Language, linguaggio di programmazione ad alto livello per 
+computers quantistici.
+
+<li> <i>Heads</i> (1990), novella di Greg Bear. Pubblicata in Italia con il 
+titolo di <i>Zero assoluto</i>, nella raccolta <i>Cyberpunk</i> della Editrice Nord.
+
+<li><a href="http://www.rdrop.com/~cary/html/quantum_c_faq.html">QC FAQ</a>. 
+Quantum Computing FAQ (Frequently Asked Questions).
+
+<li> <a href="http://qso.lanl.gov/qc/">Los Alamos</a>. Quantum 
+Computation/Cryptography presso il Centro di Ricerca di Los Alamos.
+
+
+</body>
+</html>

