@@ -238,16 +238,6 @@ activities (for educational purposes only).<p>
 <li><a href="exploits/raptor_ldaudit2">raptor_ldaudit2</a>. Local privilege escalation through glibc dynamic linker (CVE-2010-3856). Via logrotate(8).
 </ul>
 
-<b>Solaris/x86</b>
-<ul>
-<li><a href="exploits/raptor_ucbps">raptor_ucbps</a>. Solaris 8, 9 (CVE-1999-1587). Information leak with /usr/ucb/ps on both SPARC and x86.
-<li><a href="exploits/raptor_sysinfo.c">raptor_sysinfo.c</a>. Solaris 10 (CVE-2006-3824). Kernel memory disclosure with the sysinfo(2) system call.
-<li><a href="exploits/raptor_libnspr">raptor_libnspr</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation oldschool local root.
-<li><a href="exploits/raptor_libnspr2">raptor_libnspr2</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via LD_PRELOAD.
-<li><a href="exploits/raptor_libnspr3">raptor_libnspr3</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via constructor.
-<li><a href="exploits/raptor_peek.c">raptor_peek.c</a>. Solaris 8, 9, 10 (CVE-2007-5225). Kernel memory disclosure with fifofs I_PEEK ioctl(2).
-</ul>
-
 <b>Solaris/SPARC</b>
 <ul>
 <li><a href="exploits/raptor_ucbps">raptor_ucbps</a>. Solaris 8, 9 (CVE-1999-1587). Information leak with /usr/ucb/ps on both SPARC and x86.
@@ -258,6 +248,16 @@ activities (for educational purposes only).<p>
 <li><a href="exploits/raptor_passwd.c">raptor_passwd.c</a>. Solaris 8, 9 (CVE-2004-0360). Stack-based buffer overflow in the circ() function of passwd(1).
 <li><a href="exploits/raptor_sysinfo.c">raptor_sysinfo.c</a>. Solaris 10 (CVE-2006-3824). Kernel memory disclosure with the sysinfo(2) system call.
 <li><a href="exploits/raptor_xkb.c">raptor_xkb.c</a>. Solaris 8, 9, 10 (CVE-2006-4655). Buffer overflow in the Strcmp() function of X11 XKEYBOARD.
+<li><a href="exploits/raptor_libnspr">raptor_libnspr</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation oldschool local root.
+<li><a href="exploits/raptor_libnspr2">raptor_libnspr2</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via LD_PRELOAD.
+<li><a href="exploits/raptor_libnspr3">raptor_libnspr3</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via constructor.
+<li><a href="exploits/raptor_peek.c">raptor_peek.c</a>. Solaris 8, 9, 10 (CVE-2007-5225). Kernel memory disclosure with fifofs I_PEEK ioctl(2).
+</ul>
+
+<b>Solaris/x86</b>
+<ul>
+<li><a href="exploits/raptor_ucbps">raptor_ucbps</a>. Solaris 8, 9 (CVE-1999-1587). Information leak with /usr/ucb/ps on both SPARC and x86.
+<li><a href="exploits/raptor_sysinfo.c">raptor_sysinfo.c</a>. Solaris 10 (CVE-2006-3824). Kernel memory disclosure with the sysinfo(2) system call.
 <li><a href="exploits/raptor_libnspr">raptor_libnspr</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation oldschool local root.
 <li><a href="exploits/raptor_libnspr2">raptor_libnspr2</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via LD_PRELOAD.
 <li><a href="exploits/raptor_libnspr3">raptor_libnspr3</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via constructor.
@@ -352,8 +352,6 @@ solutions. YMMV.
 <ul>
 <li><a href="https://github.com/0xdea/configurations/blob/master/firewall/rc.iptables">rc.iptables</a>. Sample basic ruleset for the configuration of a Linux stateful host/masq firewall.
 <li><a href="https://github.com/0xdea/configurations/blob/master/firewall/pf.conf">pf.conf</a>. Sample PF/NAT ruleset for the configuration of a FreeBSD/OpenBSD stateful host/masq firewall.
-<li><a href="conf/MacOSXFirewall.tgz">MacOSXFirewall.tgz</a>. Startup script and basic ruleset for the ipfw firewall bundled with Mac OS X.
-<li><a href="conf/ipf.tgz">ipf.tgz</a>. Sample rulesets for the IPFilter stateful firewall, with detailed comments. Tested on OpenBSD 2.9.
 </ul>
 
 <b>Application Firewalls</b>
@@ -372,16 +370,12 @@ solutions. YMMV.
 A collection of other random stuff.<p>
 
 <ul>
-<li><a href="stuff/rtfm.gif">RTFM</a>. Hey, you! Yeah, you! Don't ask stupid questions, always Read The F* Manual before.
 <li><a href="stuff/raptor.jpg">Utah Bengaled Raptor</a>. An impressive 8 foot tall, 1 ton wooden prehistoric monster, created by artist Matt Kron.
 <li><a href="stuff/defaced.html">0xdefaced</a>. This is the archived 0xdeadbeef dot info defacement hoax made for April Fools' Day 2004.
 <li><a href="stuff/voodoo.jpg">Voodoo</a>. A picture of my old and glorious Acer TravelMate 345T notebook, running OpenBSD.
-<li><a href="stuff/hp-crash.jpg">HP JetDirect Crash</a>. Cool stack dump printed on paper by my HP JetDirect printer after a Denial of Service.
 <li><a href="stuff/insert-coin.jpg">Insert Coin</a>. My kinda original HP JetDirect printer's new display (yeah, I was bored that day).
 <li><a href="stuff/itapac.jpg">Control Room</a>. ITAPAC (DNIC 2222) is the most known Italian X.25 network, still alive as of 2006.
-<li><a href="stuff/vi.gif">Vi Assistant</a>. Fear the infamous clippy-like assistant for vim. Resistance is futile, you'll be assimilated.
 <li><a href="stuff/sidecar.jpg">Sidecar Wardriving</a>. Funny picture of a l33t wardriving session on an original <a href="http://www.ural.com/">Ural</a> sidecar.
-<li><a href="stuff/pentest.jpg">Pen-test Moderation</a>. Cheap viagra spam and SecurityFocus "penetration" test mailing list moderation fun.
 <li><a href="stuff/blocked.jpg">This Site is Blocked</a>. A screenshot of UAE's Internet Access Management Policy in action.
 <li><a href="stuff/vault7.png">Vault 7</a>. Some of my shellcodes are among the CIA tools released by Wikileaks. Achievement unlocked!
 </ul>
