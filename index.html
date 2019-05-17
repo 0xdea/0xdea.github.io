@@ -191,7 +191,7 @@ Some of my publications and related resources:<p>
 <li><a href="https://techblog.mediaservice.net/2017/09/tracing-arbitrary-methods-and-function-calls-on-android-and-ios/">Tracing Android and iOS apps</a>. Blog post explaining how to use my raptor_frida_*_trace.js <a href="https://github.com/0xdea/frida-scripts/">scripts</a>.
 <li><a href="https://techblog.mediaservice.net/2017/10/in-praise-of-tactical-exploitation/">In praise of tactical exploitation</a>. Blog post introducing my new tactical exploitation <a href="https://github.com/0xdea/tactical-exploitation">toolkit</a>.
 <li><a href="https://techblog.mediaservice.net/2017/11/how-a-unix-hacker-discovered-the-windows-powershell/">How a UNIX hacker discovered PowerShell</a>. Blog post covering my unexpected PowerShell journey.
-<li><a href="https://techblog.mediaservice.net/2019/05/raptor-at-infiltrate-2019/">Raptor at INFILTRATE 2019</a> <font color="red">(soon)</font>. Blog post covering my talk "A bug's life: story of a Solaris 0day".
+<li><a href="https://techblog.mediaservice.net/2019/05/raptor-at-infiltrate-2019/">Raptor at INFILTRATE 2019</a> <font color="red">(new)</font>. Blog post covering my talk "A bug's life: story of a Solaris 0day".
 </ul>
 
 <b>Presentations</b>
@@ -199,9 +199,9 @@ Some of my publications and related resources:<p>
 <li><a href="papers/intrusioni-di-rete.ppt">Intrusioni di rete</a>. Slides compiled for an Information Security Master at Milan University (December 2001).
 <li><a href="https://web.archive.org/web/20100213123010/http://www.blackhats.it/en/events.html">ITBH events</a>. Archived materials for all the events organized by the 
 <a href="https://web.archive.org/web/20131001085035/http://www.blackhats.it/">ITBH</a> association (2001-2003).
-<li><a href="https://vimeo.com/312131029">Speaker Introduction</a>. Amazing speaker introduction video for my talk at <a href="https://infiltratecon.com/speakers/">INFILTRATE 2019</a>.
-<li><i>A bug's life: story of a Solaris 0day</i> <font color="red">(soon)</font>. Full video of my talk at <a href="https://infiltratecon.com/speakers/">INFILTRATE 2019</a>.
-<li><a href="https://github.com/0xdea/raptor_infiltrate19">INFILTRATE 2019 party pack</a> <font color="red">(soon)</font>. Slide deck, advisory, bonus 0day exploits, and other goodies.
+<li><a href="https://vimeo.com/312131029">Speaker Introduction</a>. Amazing speaker introduction video for my talk at <a href="https://infiltratecon.com/archives/">INFILTRATE 2019</a>.
+<li><a href="https://vimeo.com/335197685">A bug's life: story of a Solaris 0day</a> <font color="red">(new)</font>. Full video of my talk at <a href="https://infiltratecon.com/archives/">INFILTRATE 2019</a>.
+<li><a href="https://github.com/0xdea/raptor_infiltrate19">INFILTRATE 2019 party pack</a> <font color="red">(new)</font>. Slide deck, advisory, bonus 0day exploits, and other goodies.
 </ul>
 
 <b>Advisories</b>
@@ -209,6 +209,7 @@ Some of my publications and related resources:<p>
 <li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0190">CVE-2003-0190</a>. I discovered and published this OpenSSH/PAM Delay Information Disclosure Vulnerability.
 <li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1242">CVE-2006-1242</a>. I discovered and published this Linux Kernel IP ID Information Disclosure Weakness.
 <li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5229">CVE-2006-5229</a>. I discovered and published yet another OpenSSH information disclosure via timing leak.
+<li><a href="https://lab.mediaservice.net/advisory/2019-01-cde-dtprintinfo.txt">CDE dtprintinfo</a> <font color="red">(new)</font>. I discovered and published this 0day local privilege escalation vulnerability in CDE.
 </ul>
 
 <b>Interviews and Mentions</b>
@@ -222,7 +223,7 @@ Some of my publications and related resources:<p>
 <a href="https://ir.linkedin.com/in/jokar">Mohsen Mostafa Jokar</a>.
 <li><a href="papers/dailydave2019.pdf">DailyDave</a>. Dave Aitel has 
 <a href="http://lists.immunityinc.com/pipermail/dailydave/2019-January/001535.html">posted</a> a terrific announcement for my talk at 
-<a href="https://infiltratecon.com/speakers/">INFILTRATE 2019</a>. Thanks!
+<a href="https://infiltratecon.com/archives/">INFILTRATE 2019</a>. Thanks!
 </ul>
 
 <b>Related Works</b>
@@ -265,6 +266,8 @@ My public exploits (for educational purposes only):<p>
 <li><a href="exploits/raptor_libnspr3">raptor_libnspr3</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via constructor.
 <li><a href="exploits/raptor_peek.c">raptor_peek.c</a>. Solaris 8, 9, 10 (CVE-2007-5225). Kernel memory disclosure with fifofs I_PEEK ioctl(2).
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_solgasm">raptor_solgasm</a>. Solaris 11 (CVE-2018-14665). Local privilege escalation via Xorg -logfile and inittab.
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc.c">raptor_dtprintname_sparc.c</a> <font color="red">(new)</font>. Solaris 7, 8, 9, 10 (0day). Buffer overflow in CDE dtprintinfo (SPARC).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc2.c">raptor_dtprintname_sparc2.c</a> <font color="red">(new)</font>. Solaris 7, 8, 9, 10 (0day). Buffer overflow in CDE dtprintinfo (SPARC, non-exec stack).
 </ul>
 
 <b>Solaris/x86</b>
@@ -276,6 +279,7 @@ My public exploits (for educational purposes only):<p>
 <li><a href="exploits/raptor_libnspr3">raptor_libnspr3</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via constructor.
 <li><a href="exploits/raptor_peek.c">raptor_peek.c</a>. Solaris 8, 9, 10 (CVE-2007-5225). Kernel memory disclosure with fifofs I_PEEK ioctl(2).
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_solgasm">raptor_solgasm</a>. Solaris 11 (CVE-2018-14665). Local privilege escalation via Xorg -logfile and inittab.
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_intel.c">raptor_dtprintname_intel.c</a> <font color="red">(new)</font>. Solaris 7, 8, 9, 10 (0day). Buffer overflow in CDE dtprintinfo (Intel, non-exec stack).
 </ul>
 
 <b>AIX</b>
