@@ -192,7 +192,8 @@ Some of my publications and related resources:<p>
 <li><a href="https://techblog.mediaservice.net/2017/10/in-praise-of-tactical-exploitation/">In praise of tactical exploitation</a>. Blog post introducing my new tactical exploitation <a href="https://github.com/0xdea/tactical-exploitation">toolkit</a>.
 <li><a href="https://techblog.mediaservice.net/2017/11/how-a-unix-hacker-discovered-the-windows-powershell/">How a UNIX hacker discovered PowerShell</a>. Blog post covering my unexpected PowerShell journey.
 <li><a href="https://techblog.mediaservice.net/2019/05/raptor-at-infiltrate-2019/">Raptor at INFILTRATE 2019</a>. Blog post covering my talk "A bug's life: story of a Solaris 0day".
-<li><a href="https://techblog.mediaservice.net/2019/10/local-privilege-escalation-on-solaris-11-x-via-xscreensaver/">CVE-2019-3010 writeup</a> <font color="red">(new)</font>. Blog post covering the vulnerability I discovered in Solaris 11.x xscreensaver.
+<li><a href="https://techblog.mediaservice.net/2019/10/local-privilege-escalation-on-solaris-11-x-via-xscreensaver/">CVE-2019-3010 writeup</a>. Blog post covering the vulnerability I discovered in Solaris 11.x xscreensaver.
+<li><a href="https://techblog.mediaservice.net/2020/01/local-privilege-escalation-via-cde-dtsession/">CVE-2020-2696 writeup</a> <font color="red">(new)</font>. Blog post covering the vulnerability I discovered in CDE dtsession.
 </ul>
 
 <b>Talks</b>
@@ -210,9 +211,11 @@ Some of my publications and related resources:<p>
 <li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0190">CVE-2003-0190</a>. I discovered and published this OpenSSH/PAM Delay Information Disclosure Vulnerability.
 <li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1242">CVE-2006-1242</a>. I discovered and published this Linux Kernel IP ID Information Disclosure Weakness.
 <li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5229">CVE-2006-5229</a>. I discovered and published yet another OpenSSH information disclosure via timing leak.
-<li><a href="https://lab.mediaservice.net/advisory/2019-01-cde-dtprintinfo.txt">CVE-2019-2832</a>. I (re)discovered and published this 0day local privilege escalation vulnerability in CDE.
+<li><a href="https://github.com/0xdea/advisories/blob/master/2019-01-cde-dtprintinfo.txt">CVE-2019-2832</a>. I (re)discovered and published this 0day local privilege escalation vulnerability in CDE.
 <li><a href="https://www.illumos.org/issues/11618">Illumos smbfs/umount</a>. I discovered and reported to <a href="https://illumos.org/">Illumos</a> a buffer overflow in smbfs/umount.
-<li><a href="https://lab.mediaservice.net/advisory/2019-02-solaris-xscreensaver.txt">CVE-2019-3010</a> <font color="red">(new)</font>. I discovered and reported this local privilege escalation vulnerability in Solaris xscreensaver.
+<li><a href="https://github.com/0xdea/advisories/blob/master/2019-02-solaris-xscreensaver.txt">CVE-2019-3010</a>. I discovered and reported this local privilege escalation vulnerability in Solaris xscreensaver.
+<li><a href="https://github.com/0xdea/advisories/blob/master/2020-01-solaris-xlock.txt">CVE-2020-2656</a> <font color="red">(new)</font>. I discovered and reported this information disclosure via Solaris xlock.
+<li><a href="https://github.com/0xdea/advisories/blob/master/2020-02-cde-dtsession.txt">CVE-2020-2696</a> <font color="red">(new)</font>. I discovered and reported this local privilege escalation via CDE dtsession.
 </ul>
 
 <b>Interviews and Mentions</b>
@@ -241,7 +244,7 @@ Some of my publications and related resources:<p>
 <li><a href="https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/glibc_ld_audit_dso_load_priv_esc.rb">Glibc LD_AUDIT</a>. A <a href="https://www.metasploit.com/">Metasploit</a> module that reimplements my <a href="https://0xdeadbeef.info/exploits/raptor_ldaudit">raptor_ldaudit</a> privilege escalation exploit.
 <li><a href="https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/local/xorg_x11_suid_server.rb">Xorg X11 Suid Server</a>. A <a href="https://www.metasploit.com/">Metasploit</a> module that reimplements my <a href="https://github.com/0xdea/exploits/blob/master/openbsd/raptor_xorgasm">raptor_xorgasm</a> privilege escalation exploit.
 <li><a href="https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/local/exim4_deliver_message_priv_esc.rb">Exim Wiz</a>. A <a href="https://www.metasploit.com/">Metasploit</a> module that reimplements my <a href="https://github.com/0xdea/exploits/blob/master/linux/raptor_exim_wiz">raptor_exim_wiz</a> privilege escalation exploit.
-<li><a href="https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/solaris/local/xscreensaver_log_priv_esc.rb">Xscreensaver Log</a> <font color="red">(new)</font>. A <a href="https://www.metasploit.com/">Metasploit</a> module that reimplements my <a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a> privilege escalation exploit.
+<li><a href="https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/solaris/local/xscreensaver_log_priv_esc.rb">Xscreensaver Log</a>. A <a href="https://www.metasploit.com/">Metasploit</a> module that reimplements my <a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a> privilege escalation exploit.
 </ul>
 
 <h2><a name="exploits"><font color="navy">[0x08] Exploits</font></a></h2>
@@ -275,7 +278,7 @@ My public exploits (for educational purposes only):<p>
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_solgasm">raptor_solgasm</a>. Solaris 11 (CVE-2018-14665). Local privilege escalation via Xorg -logfile and inittab.
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc.c">raptor_dtprintname_sparc.c</a>. Solaris 7, 8, 9, 10 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (SPARC).
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc2.c">raptor_dtprintname_sparc2.c</a>. Solaris 7, 8, 9, 10 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (SPARC, non-exec stack).
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a> <font color="red">(new)</font>. Solaris 11.x (CVE-2019-3010). Local privilege escalation via xscreensaver.
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a>. Solaris 11.x (CVE-2019-3010). Local privilege escalation via xscreensaver.
 </ul>
 
 <b>Solaris/x86</b>
@@ -288,7 +291,8 @@ My public exploits (for educational purposes only):<p>
 <li><a href="exploits/raptor_peek.c">raptor_peek.c</a>. Solaris 8, 9, 10 (CVE-2007-5225). Kernel memory disclosure with fifofs I_PEEK ioctl(2).
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_solgasm">raptor_solgasm</a>. Solaris 11 (CVE-2018-14665). Local privilege escalation via Xorg -logfile and inittab.
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_intel.c">raptor_dtprintname_intel.c</a>. Solaris 7, 8, 9, 10 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (Intel, non-exec stack).
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a> <font color="red">(new)</font>. Solaris 11.x (CVE-2019-3010). Local privilege escalation via xscreensaver.
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a>. Solaris 11.x (CVE-2019-3010). Local privilege escalation via xscreensaver.
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtsession_ipa.c">raptor_dtsession_ipa.c</a> <font color="red">(new)</font>. Solaris 10 (CVE-2020-2696). Local privilege escalation via CDE dtsession.
 </ul>
 
 <b>AIX</b>
