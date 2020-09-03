@@ -27,7 +27,7 @@ gtag('config', 'UA-118641666-1');
 <meta name="theme-color" content="#ffffff">
 
 <meta name="author" content="Marco Ivaldi">
-<meta name="keywords" content="Marco Ivaldi, raptor, 0xdeadbeef, 0dd, exploits, hacking, infosec, OSSTMM">
+<meta name="keywords" content="Marco Ivaldi, raptor, 0xdeadbeef, 0dd, antifork, exploits, hacking, infosec">
 <meta name="description" content="Information security researcher and hacker Marco Ivaldi shares his exploits, tools, and publications.">
 
 </head>
@@ -51,7 +51,7 @@ gtag('config', 'UA-118641666-1');
 "Perfection is achieved when there is nothing left to remove." -- Antoine de Saint-Exupery<br>
 "The GNU people aren't evil." -- /usr/src/linux/Documentation/CodingStyle<br>
 "You can't argue with a root shell." -- Felix "FX" Lindner<br>
-"Well, until that perfect world you need red team analysis" -- @thegrugq_ebooks<br>
+"The only limit to malloc exploitation is the imagination." -- Qualys Security Advisory<br>
 "Never whistle while you're pissing." -- Hagbard Celine<br>
 "When cryptography is outlawed, bayl bhgynjf jvyy unir cevinpl." -- Anonymous<br>
 <br></i></center>
@@ -108,26 +108,15 @@ gtag('config', 'UA-118641666-1');
 </table>
 
 <h2><a name="raptor"><font color="navy">[0x01] Who's Raptor?</font></a></h2>
-I'm a seasoned information security researcher and consultant with 20+ years
-of experience, specializing in offensive security, from old school X.25 to
-modern mobile apps. I work as Offensive Security Manager at 
-<a href="http://www.mediaservice.net/">@Mediaservice.net</a>, a leading 
-security advisory firm based in Italy, where I'm in charge of project and 
-team management, penetration testing, vulnerability research, and exploit 
-development. Basically, I'm a professional hacker and project manager. 
-I currently hold the following certifications:
-
-<ul>
-<li>(ISC)2 Certified Information Systems Security Professional (<a href="https://www.isc2.org/Certifications/CISSP">CISSP</a>)
-<li>Offensive Security Certified Professional (<a href="https://www.offensive-security.com/pwk-oscp/">OSCP</a>)
-<li>Offensive Security Certified Expert (<a href="https://www.offensive-security.com/ctp-osce/">OSCE</a>)
-<li>PCI Approved Scanning Vendor (<a href="https://www.pcisecuritystandards.org/assessors_and_solutions/approved_scanning_vendors">ASV</a>)
-<li>OSSTMM Professional Security Analyst (<a href="http://www.opsa.org/">OPSA</a>)
-<li>OSSTMM Professional Security Tester (<a href="http://www.opst.org/">OPST</a>)
-<li>OSSTMM Wireless Security Expert (<a href="http://www.owse.org/">OWSE</a>)
-<li><a href="https://www.iso.org/isoiec-27001-information-security.html">ISO/IEC 27001</a> Lead Auditor
-<li><a href="https://www.axelos.com/best-practice-solutions/prince2">PRINCE2</a> Foundation
-</ul>
+I'm a seasoned information security researcher and consultant with 
+<a href="https://web.archive.org/web/19990427024425/http://www.dislessici.org:80/">20+</a> 
+<a href="https://antifork.org/">years</a> 
+of experience, specializing in offensive security, from old school 
+X.25 to modern mobile apps. I work as Offensive Security Manager at 
+<a href="https://techblog.mediaservice.net/">@Mediaservice.net</a>, 
+a leading security advisory firm based in Italy, where I'm in charge of project and 
+team management, red teaming, penetration testing, vulnerability research, and 
+exploit development. Basically, I'm a professional hacker and project manager.<p>
 
 As a <a href="http://www.catb.org/jargon/html/H/hacker.html">hacker</a> and 
 polyglot programmer of weird machines, I study 
@@ -147,23 +136,12 @@ Hacking Exposed Linux</a>. Back in the 1990s, I co-founded
 magazine about Linux and open source), Linux Pratico, and H&amp;C.<p>
 
 This is my personal homepage and playground. Take a look below for 
-<font color="red">(new)</font> stuff. Please send your feedback to: Marco 
+<font color="red">(new)</font> stuff. Send your feedback to: Marco 
 Ivaldi 
 &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info</a>&gt;
-(<a href="raptor.asc">PGP key</a> updated 2014-07-01).<p>
+(<a href="raptor.asc">PGP key</a>).<p>
 
-<h2><a name="projects"><font color="navy">[0x02] Projects</font></a></h2>
-My current research projects:<p>
-
-<ul>
-<li><a href="https://github.com/0xdea">GitHub</a>. My GitHub page, where some of my recent projects are hosted.
-<li><a href="https://techblog.mediaservice.net/">Tech Blog</a>. The on-line repository of research projects promoted by my employer.
-<li><a href="http://www.osstmm.org/">OSSTMM</a>. I'm a core contributor of ISECOM's Open Source Security Testing Methodology Manual.
-<li><a href="http://www.hackerhighschool.org/">HHS</a>. I contribute to the Hacker Highscool, another ISECOM project promoting security awareness for teens.
-<li><a href="https://antifork.org/">Antifork Research</a>. I'm one of the founders of the project (formerly known as <a href="https://web.archive.org/web/19990427024425/http://www.dislessici.org:80/">disLESSici team</a>).
-</ul>
-
-<h2><a name="papers"><font color="navy">[0x04] Publications</font></a></h2>
+<h2><a name="papers"><font color="navy">[0x02] Publications</font></a></h2>
 Some of my publications and related resources:<p>
 
 <b>Books</b>
@@ -253,7 +231,7 @@ Some of my publications and related resources:<p>
 <li><a href="https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/solaris/local/xscreensaver_log_priv_esc.rb">Xscreensaver Log</a>. A <a href="https://www.metasploit.com/">Metasploit</a> module that reimplements my <a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a> privilege escalation exploit.
 </ul>
 
-<h2><a name="exploits"><font color="navy">[0x08] Exploits</font></a></h2>
+<h2><a name="exploits"><font color="navy">[0x04] Exploits</font></a></h2>
 My public exploits, for educational purposes only:<p>
 
 <b>Linux</b>
@@ -334,7 +312,7 @@ My public exploits, for educational purposes only:<p>
 <li><a href="https://github.com/0xdea/exploits/blob/master/misc/raptor_xorgy">raptor_xorgy</a>. Xorg 1.19.0 - 1.20.2 (CVE-2018-14665). Local privilege escalation via Xorg -modulepath.
 </ul>
 
-<h2><a name="code"><font color="navy">[0x10] Code</font></a></h2>
+<h2><a name="code"><font color="navy">[0x08] Code</font></a></h2>
 Some of my public programs and scripts, standard disclaimer applies:<p>
 
 <b>New School</b>
@@ -381,7 +359,7 @@ Some of my public programs and scripts, standard disclaimer applies:<p>
 <li><a href="code/poly.tgz">poly.tgz</a>. An old collection of polyglots, programs that may be compiled in more than one language.
 </ul>
 
-<h2><a name="config"><font color="navy">[0x20] Configurations</font></a></h2>
+<h2><a name="config"><font color="navy">[0x10] Configurations</font></a></h2>
 Some configuration templates, YMMV:<p>
 
 <b>Packet Filters</b>
@@ -402,7 +380,7 @@ Some configuration templates, YMMV:<p>
 <li><a href="https://github.com/0xdea/configurations/tree/master/vpn">openvpn-*.conf</a>. Sample OpenVPN client and server configurations. Tested on Debian GNU/Linux 8.7.
 </ul>
 
-<h2><a name="stuff"><font color="navy">[0x40] /dev/random</font></a></h2>
+<h2><a name="stuff"><font color="navy">[0x20] /dev/random</font></a></h2>
 A collection of other random stuff:<p>
 
 <ul>
