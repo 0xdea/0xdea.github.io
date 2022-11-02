@@ -272,7 +272,7 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 <li><a href="exploits/raptor_rlogin.c">raptor_rlogin.c</a>. Solaris 2.5.1, 2.6, 7, 8 (CVE-2001-0797). Buffer overflow in System V login via rlogin vector.
 <li><a href="exploits/raptor_ldpreload.c">raptor_ldpreload.c</a>. Solaris 2.6, 7, 8, 9 (CVE-2003-0609). Stack-based buffer overflow in the runtime linker ld.so.1.
 <li><a href="exploits/raptor_libdthelp.c">raptor_libdthelp.c</a>. Solaris 7, 8, 9 (CVE-2003-0834). Buffer overflow in CDE libDtHelp via dtprintinfo help feature.
-<li><a href="exploits/raptor_libdthelp2.c">raptor_libdthelp2.c</a>. Solaris 7, 8, 9 (CVE-2003-0834). Buffer overflow in CDE libDtHelp, non-exec stack version.
+<li><a href="exploits/raptor_libdthelp2.c">raptor_libdthelp2.c</a>. Solaris 7, 8, 9 (CVE-2003-0834). Buffer overflow in CDE libDtHelp, non-exec stack (NX) version.
 <li><a href="exploits/raptor_passwd.c">raptor_passwd.c</a>. Solaris 8, 9 (CVE-2004-0360). Stack-based buffer overflow in the circ() function of passwd(1).
 <li><a href="exploits/raptor_sysinfo.c">raptor_sysinfo.c</a>. Solaris 10 (CVE-2006-3824). Kernel memory disclosure with the sysinfo(2) system call.
 <li><a href="exploits/raptor_xkb.c">raptor_xkb.c</a>. Solaris 8, 9, 10 (CVE-2006-4655). Buffer overflow in the Strcmp() function of X11 XKEYBOARD.
@@ -283,11 +283,11 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_solgasm">raptor_solgasm</a>. Solaris 11 (CVE-2018-14665). Local privilege escalation via 
 <a href="https://web.archive.org/web/20201130200729/https://techblog.mediaservice.net/2018/11/cve-2018-14665-exploit-local-privilege-escalation-on-solaris-11/">Xorg -logfile and inittab</a>.
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc.c">raptor_dtprintname_sparc.c</a>. Solaris 7, 8, 9 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (SPARC).
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc2.c">raptor_dtprintname_sparc2.c</a>. Solaris 7, 8, 9 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (SPARC, non-exec stack).
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc3.c">raptor_dtprintname_sparc3.c</a>. Solaris 10 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (SPARC, non-exec stack).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc2.c">raptor_dtprintname_sparc2.c</a>. Solaris 7, 8, 9 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (SPARC, NX).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_sparc3.c">raptor_dtprintname_sparc3.c</a>. Solaris 10 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (SPARC, NX).
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a>. Solaris 11.x (CVE-2019-3010). Local privilege escalation via xscreensaver.
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_sparc.c">raptor_dtprintcheckdir_sparc.c</a>. Solaris 10 (0day?). Format string bug in CDE dtprintinfo (SPARC PoC).
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_sparc2.c">raptor_dtprintcheckdir_sparc2.c</a>. Solaris 10 (0day?). Format string bug in CDE dtprintinfo (SPARC, non-exec stack).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_sparc.c">raptor_dtprintcheckdir_sparc.c</a>. Solaris 10 (CVE-2022-43752). Format string bug in CDE dtprintinfo (SPARC PoC).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_sparc2.c">raptor_dtprintcheckdir_sparc2.c</a>. Solaris 10 (CVE-2022-43752). Format string bug in CDE dtprintinfo (SPARC, NX).
 </ul>
 
 <b>Solaris/x86</b>
@@ -299,12 +299,12 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 <li><a href="exploits/raptor_libnspr3">raptor_libnspr3</a>. Solaris 10 (CVE-2006-4842). NSPR library arbitrary file creation local root via constructor.
 <li><a href="exploits/raptor_peek.c">raptor_peek.c</a>. Solaris 8, 9, 10 (CVE-2007-5225). Kernel memory disclosure with fifofs I_PEEK ioctl(2).
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_solgasm">raptor_solgasm</a>. Solaris 11 (CVE-2018-14665). Local privilege escalation via <a href="https://web.archive.org/web/20201130200729/https://techblog.mediaservice.net/2018/11/cve-2018-14665-exploit-local-privilege-escalation-on-solaris-11/">Xorg -logfile and inittab</a>.
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_intel.c">raptor_dtprintname_intel.c</a>. Solaris 7, 8, 9, 10 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (Intel, non-exec stack).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintname_intel.c">raptor_dtprintname_intel.c</a>. Solaris 7, 8, 9, 10 (CVE-2019-2832). Buffer overflow in CDE dtprintinfo (Intel, NX).
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_xscreensaver">raptor_xscreensaver</a>. Solaris 11.x (CVE-2019-3010). Local privilege escalation via xscreensaver.
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtsession_ipa.c">raptor_dtsession_ipa.c</a>. Solaris 10 (CVE-2020-2696). Local privilege escalation via CDE dtsession.
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_sdtcm_conv.c">raptor_sdtcm_conv.c</a>. Solaris 10 (CVE-2020-2944). Local privilege escalation via CDE sdtcm_convert.
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_intel.c">raptor_dtprintcheckdir_intel.c</a>. Solaris 10 (0day?). Another buffer overflow in CDE dtprintinfo (Intel, non-exec stack).
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_intel2.c">raptor_dtprintcheckdir_intel2.c</a>. Solaris 10 (0day?). Format string bug in CDE dtprintinfo (Intel, non-exec stack).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_intel.c">raptor_dtprintcheckdir_intel.c</a>. Solaris 10 (CVE-2022-43752). Another buffer overflow in CDE dtprintinfo (Intel, NX).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_intel2.c">raptor_dtprintcheckdir_intel2.c</a>. Solaris 10 (CVE-2022-43752). Format string bug in CDE dtprintinfo (Intel, NX).
 </ul>
 
 <b>AIX</b>
