@@ -156,8 +156,8 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 <li><a href="http://phrack.org/issues/70/13.html#article">Exploiting a Format String Bug in Solaris CDE</a>. It finally happened... I've been published on Phrack!
 <li><a href="https://security.humanativaspa.it/letme-go-a-minimalistic-meterpreter-stager-written-in-go/">Letme.go</a>. A minimalistic Go implementation of the staging protocols used by the Metasploit Framework. 
 <li><a href="https://security.humanativaspa.it/semgrep-ruleset-for-c-c-vulnerability-research/">Semgrep C/C++ rules</a>. Introducing my Semgrep ruleset for C/C++ vulnerability research. 
-<li><a href="https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/">Multiple vulnerabilities in Zyxel zysh</a> <font color="red">(new)</font>. Zyxel zysh CVE-2022-26531 and CVE-2022-26532 writeup.
-<li><a href="https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/">Automating binary vulnerability discovery with Ghidra and Semgrep</a> <font color="red">(new)</font>. Introducing my static analysis toolkit. 
+<li><a href="https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/">Multiple vulnerabilities in Zyxel zysh</a>. Zyxel zysh CVE-2022-26531 and CVE-2022-26532 writeup.
+<li><a href="https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/">Automating binary vulnerability discovery with Ghidra and Semgrep</a>. Introducing my static analysis toolkit. 
 </ul>
 
 <b>Interviews and Mentions</b>
@@ -225,6 +225,11 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 <li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5229">CVE-2006-5229</a>. I discovered and published yet another OpenSSH information disclosure via timing leak.
 </ul>
 
+<b>X.Org</b>
+<ul>
+<li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-46285">CVE-2022-46285</a> <font color="red">(new)</font>. I discovered and <a href="https://lists.x.org/archives/xorg-announce/2023-January/003312.html">reported</a> a vulnerability in handling XPM files in libXpm.
+</ul>
+
 <b>Linux</b>
 <ul>
 <li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1242">CVE-2006-1242</a>. I discovered and published this Linux Kernel IP ID Information Disclosure Weakness.
@@ -248,8 +253,8 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 
 <b>Zyxel</b>
 <ul>
-<li><a href="https://github.com/0xdea/advisories/blob/master/HNS-2022-02-zyxel-zysh.txt">CVE-2022-26531</a> <font color="red">(new)</font>. I <a href="https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/">discovered</a> and <a href="https://www.zyxel.com/support/multiple-vulnerabilities-of-firewalls-AP-controllers-and-APs.shtml">reported</a> multiple memory corruption bugs in Zyxel zysh.
-<li><a href="https://github.com/0xdea/advisories/blob/master/HNS-2022-02-zyxel-zysh.txt">CVE-2022-26532</a> <font color="red">(new)</font>. I <a href="https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/">discovered</a> and <a href="https://www.zyxel.com/support/multiple-vulnerabilities-of-firewalls-AP-controllers-and-APs.shtml">reported</a> a command injection vulnerability in Zyxel zysh.
+<li><a href="https://github.com/0xdea/advisories/blob/master/HNS-2022-02-zyxel-zysh.txt">CVE-2022-26531</a>. I <a href="https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/">discovered</a> and <a href="https://www.zyxel.com/support/multiple-vulnerabilities-of-firewalls-AP-controllers-and-APs.shtml">reported</a> multiple memory corruption bugs in Zyxel zysh.
+<li><a href="https://github.com/0xdea/advisories/blob/master/HNS-2022-02-zyxel-zysh.txt">CVE-2022-26532</a>. I <a href="https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/">discovered</a> and <a href="https://www.zyxel.com/support/multiple-vulnerabilities-of-firewalls-AP-controllers-and-APs.shtml">reported</a> a command injection vulnerability in Zyxel zysh.
 </ul>
 
 <h2><a name="exploits"><font color="navy">[0x10] Exploits</font></a></h2>
@@ -320,7 +325,7 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 
 <b>Zyxel</b>
 <ul>
-<li><a href="https://github.com/0xdea/exploits/blob/master/zyxel/raptor_zysh_fhtagn.exp">raptor_zysh_fhtagn.exp</a> <font color="red">(new)</font>. Zyxel zysh (CVE-2022-26531). Remote code execution via multiple <a href="https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/">format string bugs</a>.
+<li><a href="https://github.com/0xdea/exploits/blob/master/zyxel/raptor_zysh_fhtagn.exp">raptor_zysh_fhtagn.exp</a>. Zyxel zysh (CVE-2022-26531). Remote code execution via multiple <a href="https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/">format string bugs</a>.
 </ul>
 
 <b>Oracle</b>
@@ -350,8 +355,8 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 <ul>
 <li><a href="https://github.com/0xdea/tactical-exploitation">tactical-exploitation</a>. A modern tactical exploitation toolkit to assist penetration testers.
 <li><a href="https://github.com/0xdea/frida-scripts">frida-scripts</a>. A collection of my <a href="https://frida.re/">Frida.re</a> instrumentation scripts to facilitate reverse engineering.
-<li><a href="https://github.com/0xdea/ghidra-scripts">ghidra-scripts</a>  <font color="red">(new)</font>. A collection of my <a href="https://ghidra-sre.org/">Ghidra</a> scripts to facilitate reverse engineering and vulnerability research.
-<li><a href="https://github.com/0xdea/semgrep-rules">semgrep-rules</a>  <font color="red">(new)</font>. A collection of my <a href="https://semgrep.dev/">Semgrep</a> rules to facilitate vulnerability research.
+<li><a href="https://github.com/0xdea/ghidra-scripts">ghidra-scripts</a>. A collection of my <a href="https://ghidra-sre.org/">Ghidra</a> scripts to facilitate reverse engineering and vulnerability research.
+<li><a href="https://github.com/0xdea/semgrep-rules">semgrep-rules</a>. A collection of my <a href="https://semgrep.dev/">Semgrep</a> rules to facilitate vulnerability research.
 <li><a href="https://github.com/0xdea/PowerSploit/blob/dev/CodeExecution/Invoke-Shellcode.ps1">Invoke-Shellcode.ps1</a>. Updated cmdlet with -Stealth command line switch (see my <a href="https://github.com/PowerShellMafia/PowerSploit/pull/272">pull request</a>).
 <li><a href="code/samba-hax0r">samba-hax0r</a>. Multi-purpose attack tool for SMB/CIFS network protocols exploitation.
 <li><a href="code/mssql-hax0r">mssql-hax0r</a>. Multi-purpose SQL injection attack tool for advanced Microsoft SQL Server exploitation.
