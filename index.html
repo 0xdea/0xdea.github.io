@@ -234,7 +234,8 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 <li><a href="https://github.com/0xdea/advisories/blob/master/2020-07-solaris-whodo-w.txt">CVE-2020-2771</a>. I discovered and reported this heap-based buffer overflow in Solaris whodo and w.
 <li><a href="https://github.com/0xdea/advisories/blob/master/2020-06-cde-libDtSvc.txt">CVE-2020-2851</a>. I discovered and reported this stack-based buffer overflow in CDE libDtSvc.
 <li><a href="https://github.com/0xdea/advisories/blob/master/2020-05-cde-sdtcm_convert.txt">CVE-2020-2944</a>. I <a href="https://web.archive.org/web/20200513194744/https://techblog.mediaservice.net/2020/04/cve-2020-2944-local-privilege-escalation-via-cde-sdtcm_convert/">discovered</a> and reported this local privilege escalation via CDE sdtcm_convert.
-<li><a href="https://github.com/0xdea/advisories/blob/master/HNS-2022-01-dtprintinfo.txt">libXm ForeverDay</a> <font color="red">(new)</font>. I <a href="https://security.humanativaspa.it/nothing-new-under-the-sun/">discovered</a> and reported this CDE dtprintinfo and libXm bug chain.
+<li><a href="https://github.com/0xdea/advisories/blob/master/HNS-2022-01-dtprintinfo.txt">CVE-2023-24039</a> <font color="red">(new)</font>. I <a href="https://security.humanativaspa.it/nothing-new-under-the-sun/">discovered</a> and <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-24039">reported</a> a buffer overflow in libXm.
+<li><a href="https://github.com/0xdea/advisories/blob/master/HNS-2022-01-dtprintinfo.txt">CVE-2023-24040</a> <font color="red">(new)</font>. I <a href="https://security.humanativaspa.it/nothing-new-under-the-sun/">discovered</a> and <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-24040">reported</a> a printer name injection and memory disclosure.
 </ul>
 
 <b>Illumos</b>
@@ -312,7 +313,7 @@ Ivaldi &lt;<a href="mailto:raptor[at]0xdeadbeef.info">raptor[at]0xdeadbeef.info<
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_sdtcm_conv.c">raptor_sdtcm_conv.c</a>. Solaris 10 (CVE-2020-2944). Local privilege escalation via CDE sdtcm_convert.
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_intel.c">raptor_dtprintcheckdir_intel.c</a>. Solaris 10 (CVE-2022-43752). Another buffer overflow in CDE dtprintinfo (Intel, NX).
 <li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintcheckdir_intel2.c">raptor_dtprintcheckdir_intel2.c</a>. Solaris 10 (CVE-2022-43752). Format string bug in CDE dtprintinfo (Intel, NX).
-<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintlibXmas.c">raptor_dtprintlibXmas.c</a> <font color="red">(new)</font>. Solaris 10 (ForeverDay). Buffer overflow in libXm via CDE dtprintinfo (Intel, NX).
+<li><a href="https://github.com/0xdea/exploits/blob/master/solaris/raptor_dtprintlibXmas.c">raptor_dtprintlibXmas.c</a> <font color="red">(new)</font>. Solaris 10 (CVE-2023-24039). Buffer overflow in libXm via CDE dtprintinfo (Intel, NX).
 </ul>
 
 <b>AIX</b>
